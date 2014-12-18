@@ -1,0 +1,78 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: EducationDream\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-07-06 19:07+0100\n"
+"PO-Revision-Date: 2012-07-06 19:09+0100\n"
+"Last-Translator: Tulio Braga <tuliobragam@gmail.com>\n"
+"Language-Team: Tulio Braga <tuliobragam@gmail.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: \n"
+"X-Poedit-KeywordsList: translate\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-Language: Spanish\n"
+"X-Poedit-Country: SPAIN\n"
+"X-Poedit-SearchPath-0: ..\n"
+
+msgid "Education Dream"
+msgstr "Education Dream"
+
+msgid "Home"
+msgstr "Inicio"
+
+msgid "All rights reserved."
+msgstr "Todos los derechos reservados"
+
+msgid "Welcome to %sEducation Dream%s"
+msgstr "Bienvenido al %sEducation%s"
+
+msgid "An error occurred"
+msgstr "Ha ocurrido un error"
+
+msgid "Additional information"
+msgstr "Información adicional"
+
+msgid "File"
+msgstr "Archivo"
+
+msgid "Message"
+msgstr "Mensaje"
+
+msgid "Stack trace"
+msgstr "Seguimiento de la pila (stack trace)"
+
+msgid "Previous exceptions"
+msgstr "Excepciones anteriores"
+
+msgid "No Exception available"
+msgstr "No hay ninguna Excepción disponible."
+
+msgid "A 404 error occurred"
+msgstr "Ha ocurrido un error 404"
+
+msgid "The requested controller was unable to dispatch the request."
+msgstr "El controlador solicitado no pudo ejecutar la petición."
+
+msgid "The requested controller could not be mapped to an existing controller class."
+msgstr "El controlador solicitado no se pudo mapear con una clase de controlador existente."
+
+msgid "The requested controller was not dispatchable."
+msgstr "El controlador solicitado no es ejecutable."
+
+msgid "The requested URL could not be matched by routing."
+msgstr "El ruteador no ha encontrado la ruta para la URL solicitada."
+
+msgid "We cannot determine at this time why a 404 was generated."
+msgstr "No pudimos determinar por qué un error 404 ha sido generado."
+
+msgid "Controller"
+msgstr "Controller"
+
+msgid "resolves to %s"
+msgstr "se resuelve a %s"
+
+msgid "Exception"
+msgstr "Excepción"
+
