@@ -22,6 +22,7 @@ class LoginController extends AbstractActionController
 
     public function facebookAction() {
         try {
+            \Facebook\FacebookSession::setDefaultApplication('1410290089262851', '71144b560323842d1a6fffeb9cbec9e7');
             $redirectUrl = $this->url()->fromRoute('home');
             $helper = new \Facebook\FacebookRedirectLoginHelper('http://104.236.104.98/'.$redirectUrl.'login/facebook');
             $session = $helper->getSessionFromRedirect();
