@@ -14,11 +14,11 @@ class LoginController extends AbstractActionController
     public function facebookAction() {
         $code = $this->params('code');
         if($code === null) {
-            $session = new Zend_Session();
+            session_start();
             \Facebook\FacebookSession::setDefaultApplication('1410290089262851', '71144b560323842d1a6fffeb9cbec9e7');
 
             $redirectUrl = $this->url()->fromRoute('home');
-            $helper = new \Facebook\FacebookRedirectLoginHelper('http://104.236.104.98/'.$redirectUrl.'/login/facebook');
+            $helper = new \Facebook\FacebookRedirectLoginHelper('http://104.236.104.98/'.$redirectUrl.'login/facebook');
             $loginUrl = $helper->getLoginUrl();
             $this->redirect()->toUrl($loginUrl);
         } else {
