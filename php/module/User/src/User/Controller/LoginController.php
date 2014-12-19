@@ -12,17 +12,17 @@ class LoginController extends AbstractActionController
     }
 
     public function facebookAction() {
-        session_start();
-        \Facebook\FacebookSession::setDefaultApplication('1410290089262851', '71144b560323842d1a6fffeb9cbec9e7');
+        $code = $this->params('code');
+        if($code === null) {
+            \Facebook\FacebookSession::setDefaultApplication('1410290089262851', '71144b560323842d1a6fffeb9cbec9e7');
 
-        $redirectUrl = $this->url('/');
-        $helper = new \Facebook\FacebookRedirectLoginHelper($redirectUrl);
-        $loginUrl = $helper->getLoginUrl();
-        
-        $response = $this->getResponse();
-        $response->setStatusCode(200);
-        $response->setContent($loginUrl);
-        return $response;
+            $redirectUrl = $this->url()->fromRoute('home');
+            $helper = new \Facebook\FacebookRedirectLoginHelper('http://104.236.104.98/'.$redirectUrl.'/login/facebook');
+            $loginUrl = $helper->getLoginUrl();
+            $this->redirect()->toUrl($loginUrl);
+        } else {
+            var_dump($code);die;
+        }
     }
 
 }
