@@ -4,7 +4,7 @@ $this->headLink()->appendStylesheet($this->basePath() . '/css/form-signin.css');
 <form class="form-signin" role="form">
     <h2 class="form-signin-heading"><?php echo $this->translate('SIGN IN') ?></h2>
     <hr />
-    <a class="btn btn-lg btn-primary btn-block" href="<?php echo $this->loginUrl ?>"><?php echo $this->translate('Connect with Facebook') ?></a>
+    <a class="btn btn-lg btn-primary btn-block" href="<?php echo $this->url('facebook') ?>"><?php echo $this->translate('Connect with Facebook') ?></a>
     <hr />
     <label for="inputEmail" class="sr-only"><?php echo $this->translate('Email address') ?></label>
     <input type="email" id="inputEmail" class="form-control" placeholder="<?php echo $this->translate('Email address') ?>" required autofocus>

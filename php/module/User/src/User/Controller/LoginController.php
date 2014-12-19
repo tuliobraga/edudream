@@ -21,7 +21,29 @@ class LoginController extends AbstractActionController
     }
 
     public function facebookAction() {
-        $code = $this->params()->fromQuery('code');
+        try {
+            $redirectUrl = $this->url()->fromRoute('home');
+            $helper = new FacebookRedirectLoginHelper('http://104.236.104.98/'.$redirectUrl.'login/facebook');
+            $session = $helper->getSessionFromRedirect();
+        } catch(FacebookRequestException $fbex) {
+            throw $fbex;
+        } catch(\Exception $ex) {
+            throw $ex;
+        }
+
+        if ($session) {
+            var_dump($session);
+        }
+        else
+        {
+            $loginUrl = $helper->getLoginUrl();
+            header("location:".$loginUrl);
+            exit;
+        }
+        
+        
+        
+        /*$code = $this->params()->fromQuery('code');
         $state = $this->params()->fromQuery('state');
         $redirectUrl = $this->url()->fromRoute('home');
 
@@ -31,7 +53,7 @@ class LoginController extends AbstractActionController
             $helper = new \Facebook\FacebookRedirectLoginHelper('http://104.236.104.98/'.$redirectUrl.'login/facebook');
             $session = $helper->getSessionFromRedirect();
             var_dump($session);
-        }
+        }*/
     }
 
 }
