@@ -12,7 +12,7 @@ class LoginController extends AbstractActionController
     }
 
     public function facebookAction() {
-        $code = $this->params('code');
+        $code = $this->params()->fromQuery('code');
         if($_GET['code'] === null) {
             session_start();
             \Facebook\FacebookSession::setDefaultApplication('1410290089262851', '71144b560323842d1a6fffeb9cbec9e7');
