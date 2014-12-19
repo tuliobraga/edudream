@@ -23,6 +23,7 @@ class LoginController extends AbstractActionController
             $loginUrl = $helper->getLoginUrl();
             $this->redirect()->toUrl($loginUrl);
         } else {
+            $helper = new \Facebook\FacebookRedirectLoginHelper();
             $session = $helper->getSessionFromRedirect();
             var_dump($code);
             var_dump($session);die;
