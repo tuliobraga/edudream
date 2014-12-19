@@ -14,6 +14,7 @@ class LoginController extends AbstractActionController
     public function facebookAction() {
         $code = $this->params('code');
         if($code === null) {
+            $session = new Zend_Session();
             \Facebook\FacebookSession::setDefaultApplication('1410290089262851', '71144b560323842d1a6fffeb9cbec9e7');
 
             $redirectUrl = $this->url()->fromRoute('home');
