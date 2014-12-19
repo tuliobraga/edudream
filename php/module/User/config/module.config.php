@@ -58,6 +58,32 @@ return array(
                     ),
                 ),
             ),
+            'facebook' => array(
+                'type'    => 'Literal',
+                'options' => array(
+                    'route'    => '/login/facebook',
+                    'defaults' => array(
+                        '__NAMESPACE__' => 'User\Controller',
+                        'controller'    => 'Login',
+                        'action'        => 'facebook',
+                    ),
+                ),
+                'may_terminate' => true,
+                'child_routes' => array(
+                    'default' => array(
+                        'type'    => 'Segment',
+                        'options' => array(
+                            'route'    => '/[:controller[/:action]]',
+                            'constraints' => array(
+                                'controller' => '[a-zA-Z][a-zA-Z0-9_-]*',
+                                'action'     => '[a-zA-Z][a-zA-Z0-9_-]*',
+                            ),
+                            'defaults' => array(
+                            ),
+                        ),
+                    ),
+                ),
+            ),
         ),
     ),
     'service_manager' => array(

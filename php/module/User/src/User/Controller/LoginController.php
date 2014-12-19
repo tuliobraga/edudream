@@ -10,4 +10,13 @@ class LoginController extends AbstractActionController
     {
         return new ViewModel();
     }
+
+    public function facebookAction() {
+        \Facebook\FacebookSession::setDefaultApplication('1410290089262851', '71144b560323842d1a6fffeb9cbec9e7');
+
+        $redirectUrl = $this->url('/');
+        $helper = new \Facebook\FacebookRedirectLoginHelper($redirectUrl);
+        $loginUrl = $helper->getLoginUrl();
+    }
+
 }
