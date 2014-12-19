@@ -17,5 +17,5 @@ $this->headLink()->appendStylesheet($this->basePath() . '/css/form-signin.css');
     </div>
     <button class="btn btn-lg btn-success btn-block" type="submit"><?php echo $this->translate('Sign in') ?></button>
     <hr />
-    <p>Don't have an account? <a href='<?php echo $this->basePath() ?>/user/sign-up'>Sign Up</a></p>
+    <p>Don't have an account? <a href="<?php echo $this->url('sign-up') ?>">Sign Up</a></p>
 </form>
