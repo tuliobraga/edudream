@@ -18,6 +18,11 @@ class LoginController extends AbstractActionController
         $redirectUrl = $this->url('/');
         $helper = new \Facebook\FacebookRedirectLoginHelper($redirectUrl);
         $loginUrl = $helper->getLoginUrl();
+        
+        $response = $this->getResponse();
+        $response->setStatusCode(200);
+        $response->setContent($loginUrl);
+        return $response;
     }
 
 }
