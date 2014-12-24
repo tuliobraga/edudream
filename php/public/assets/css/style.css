@@ -1,0 +1,259 @@
+body {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 400; }
+
+.btn-big {
+  font-size: 32px !important;
+  width: 100% !important; }
+
+.btn-login {
+  margin: 0 10px;
+  background-color: transparent;
+  border-color: #bbb;
+  color: #bbb;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 14px;
+  -webkit-transition: all 0.2s linear;
+  -moz-transition: all 0.2s linear;
+  -o-transition: all 0.2s linear;
+  transition: all 0.2s linear; }
+  .btn-login:hover {
+    color: #666;
+    background-color: #eee;
+    border-color: #bbb; }
+
+.btn-signup {
+  background-color: #56b5ff !important;
+  border-color: #56b5ff !important;
+  color: #fff !important;
+  text-transform: uppercase;
+  font-weight: 800;
+  font-size: 14px;
+  -webkit-transition: all 0.2s linear;
+  -moz-transition: all 0.2s linear;
+  -o-transition: all 0.2s linear;
+  transition: all 0.2s linear; }
+  .btn-signup:hover {
+    background-color: #0086ef !important;
+    border-color: #0086ef !important; }
+
+.navbar-wrapper {
+  background-color: #f7f7f7;
+  border-bottom: #eee solid 5px; }
+
+.navbar {
+  margin: 0; }
+  .navbar .navbar-brand {
+    font-size: 0;
+    text-indent: -9999px;
+    width: 180px;
+    height: 73px;
+    display: block;
+    background: url('../images/logo.png') no-repeat 0 0;
+    margin: 10px 0; }
+  .navbar .navbar-nav {
+    float: right;
+    padding: 22px 0 0; }
+    .navbar .navbar-nav a {
+      color: #666; }
+
+.feature {
+  background-color: #4b585c;
+  background-image: url('../images/bg-feature.png');
+  background-position: 30% bottom;
+  background-repeat: no-repeat;
+  position: relative; }
+  .feature .feature-inner {
+    overflow: hidden; }
+  .feature .caption {
+    padding: 120px 0;
+    width: 50%;
+    max-width: 500px;
+    float: left; }
+  .feature h1 {
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 100;
+    font-size: 43px; }
+    .feature h1 strong {
+      font-weight: 800; }
+    .feature h1 span {
+      color: #56b5ff; }
+  .feature h2 {
+    font-size: 22px;
+    color: #fff;
+    font-weight: 100;
+    letter-spacing: 1px;
+    margin: 40px 0; }
+  .feature .btn {
+    background-color: transparent;
+    border-color: #56b5ff;
+    color: #56b5ff;
+    text-transform: uppercase;
+    font-weight: 800;
+    -webkit-transition: all 0.2s linear;
+    -moz-transition: all 0.2s linear;
+    -o-transition: all 0.2s linear;
+    transition: all 0.2s linear; }
+    .feature .btn:hover {
+      color: #fff;
+      border-color: #fff; }
+  .feature .carousel {
+    float: right;
+    width: 50%;
+    padding: 100px 0 0; }
+    .feature .carousel .carousel-inner {
+      overflow: hidden; }
+    .feature .carousel .item {
+      min-height: 400px; }
+    .feature .carousel p {
+      font-size: 22px;
+      color: #fff;
+      font-weight: 100;
+      letter-spacing: 1px;
+      margin: 0 0 30px 0;
+      position: relative;
+      padding: 0 50px 30px 50px;
+      display: block;
+      border-bottom: 1px solid #434f53; }
+      .feature .carousel p:before, .feature .carousel p:after {
+        position: absolute;
+        content: "";
+        width: 43px;
+        height: 33px; }
+      .feature .carousel p:before {
+        background: url('../images/quote-left.png') no-repeat 0 0;
+        top: 0;
+        left: 0; }
+      .feature .carousel p:after {
+        background: url('../images/quote-right.png') no-repeat 0 0;
+        bottom: 20px;
+        right: 0; }
+    .feature .carousel span {
+      display: block;
+      overflow: hidden;
+      padding-left: 100px;
+      text-align: right; }
+      .feature .carousel span img {
+        position: absolute;
+        left: 0; }
+      .feature .carousel span h3 {
+        font-size: 18px;
+        color: #fff;
+        font-weight: 100; }
+      .feature .carousel span h4 {
+        font-size: 14px;
+        color: #56b5ff;
+        font-weight: 200; }
+
+.main {
+  padding: 50px 0; }
+
+footer {
+  padding: 50px 0;
+  background: #ececec;
+  position: relative; }
+  footer .buttons {
+    text-align: center;
+    margin-bottom: 40px; }
+  footer .back-top {
+    background: #56b5ff;
+    width: 30px;
+    height: 30px;
+    font-size: 0;
+    overflow: hidden;
+    margin: 30px auto;
+    display: block;
+    -webkit-border-radius: 30px;
+    -moz-border-radius: 30px;
+    -ms-border-radius: 30px;
+    -o-border-radius: 30px;
+    border-radius: 30px;
+    -webkit-transition: all 0.2s linear;
+    -moz-transition: all 0.2s linear;
+    -o-transition: all 0.2s linear;
+    transition: all 0.2s linear; }
+    footer .back-top:hover {
+      background-color: #0086ef !important; }
+
+.sign h2 {
+  text-align: center;
+  font-size: 18px;
+  text-transform: uppercase;
+  color: #666; }
+.sign .or {
+  text-align: center;
+  display: block;
+  position: relative; }
+  .sign .or:before {
+    content: "";
+    height: 1px;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    background-color: #eee;
+    display: block;
+    width: 100%;
+    z-index: -1; }
+  .sign .or span {
+    padding: 0 20px;
+    line-height: 20px;
+    height: 20px;
+    font-size: 20px;
+    text-transform: uppercase;
+    color: #ccc;
+    background: white; }
+.sign .btn-facebook {
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+  background-clip: padding-box;
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #6281be), color-stop(100%, #5874ad));
+  background: -webkit-linear-gradient(top, #6281be, #5874ad);
+  background: -moz-linear-gradient(top, #6281be, #5874ad);
+  background: -o-linear-gradient(top, #6281be, #5874ad);
+  background: -ms-linear-gradient(top, #6281be, #5874ad);
+  -pie-background: linear-gradient(top, #6281be, #5874ad);
+  background: linear-gradient(top, #6281be, #5874ad);
+  display: block;
+  -moz-box-orient: vertical;
+  vertical-align: middle;
+  padding-right: 30px;
+  line-height: 41px;
+  color: #fff;
+  width: 250px;
+  margin: 0 auto 30px auto;
+  text-align: left;
+  font-size: 18px; }
+.sign .btn-facebook b {
+  text-indent: -119988px;
+  overflow: hidden;
+  text-align: left;
+  background-image: url('../images/facebook.png');
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  width: 10px;
+  height: 17px;
+  display: -moz-inline-box;
+  -moz-box-orient: vertical;
+  display: inline-block;
+  vertical-align: middle;
+  *vertical-align: auto;
+  background-position: center;
+  width: 45px;
+  height: 41px;
+  vertical-align: middle;
+  margin-right: 30px;
+  border-right: 1px solid #879ecb;
+  float: left; }
+.sign .btn-facebook b {
+  *display: inline; }
+.sign .btn-facebook:hover {
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #8095bd), color-stop(100%, #5874ad));
+  background: -webkit-linear-gradient(top, #8095bd, #5874ad);
+  background: -moz-linear-gradient(top, #8095bd, #5874ad);
+  background: -o-linear-gradient(top, #8095bd, #5874ad);
+  background: -ms-linear-gradient(top, #8095bd, #5874ad);
+  -pie-background: linear-gradient(top, #8095bd, #5874ad);
+  background: linear-gradient(top, #8095bd, #5874ad);
+  text-decoration: none; }
