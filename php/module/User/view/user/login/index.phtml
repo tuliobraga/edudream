@@ -1,21 +1,28 @@
-<?php 
-$this->headLink()->appendStylesheet($this->basePath() . '/css/form-signin.css');
-?>
-<form class="form-signin" role="form">
-    <h2 class="form-signin-heading"><?php echo $this->translate('SIGN IN') ?></h2>
-    <hr />
-    <a class="btn btn-lg btn-primary btn-block" href="<?php echo $this->loginUrl ?>"><?php echo $this->translate('Connect with Facebook') ?></a>
-    <hr />
-    <label for="inputEmail" class="sr-only"><?php echo $this->translate('Email address') ?></label>
-    <input type="email" id="inputEmail" class="form-control" placeholder="<?php echo $this->translate('Email address') ?>" required autofocus>
-    <label for="inputPassword" class="sr-only"><?php echo $this->translate('Email address') ?></label>
-    <input type="password" id="inputPassword" class="form-control" placeholder="<?php echo $this->translate('Password') ?>" required>
-    <div class="checkbox">
-        <label>
-            <input type="checkbox" value="remember-me"> <?php echo $this->translate('Remember me') ?>
-        </label>
+<div class="container sign">
+    <div class="col-md-6 col-md-offset-3">
+        <h2>Você pode acessar através do Facebook.</h2>
+        <a href="#" class="btn btn-lg btn-facebook btn-primary btn-signup">
+            <b>facebook</b>
+                Conectar </a>
     </div>
-    <button class="btn btn-lg btn-info btn-block" type="submit"><?php echo $this->translate('Sign in') ?></button>
-    <hr />
-    <p>Don't have an account? <a href="<?php echo $this->url('sign-up') ?>">Sign Up</a></p>
-</form>
+    <div class="col-md-6 col-md-offset-3">
+        <p class='or'>
+            <span>ou</span>
+        </p>
+        <h2>Fazer login </h2>
+        <form>
+            <div class="form-group">
+                <label for="exampleInputEmail1">Seu e-mail</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputPassword1">Digite sua senha</label>
+                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+            </div>
+            <button type="submit" class="btn btn-lg btn-big btn-primary btn-signup">Entrar </button>
+            <h4 class='pull-right'><a href="">Esqueceu a senha?</a></h4>
+            <hr style="clear: both;"/>
+            <h4 class='pull-right'>Não possui uma conta? <a href="<?php echo $this->basePath() ?>/sign-up">Cadastre-se.</a></h4>
+        </form>
+    </div>
+</div>

@@ -1,28 +1,34 @@
 <?php
 $this->headLink()->appendStylesheet($this->basePath() . '/css/form-signup.css');
 ?>
-<form class="form-signup" role="form">
-    <h2 class="form-signup-heading"><?php echo $this->translate('ACCOUNT') ?></h2>
-    <hr />
-    <label for="inputEmail"><?php echo $this->translate('Name') ?></label>
-    <input type="text" name="firstName" id="inputFirstName" class="form-control" placeholder="<?php echo $this->translate('First') ?>" required autofocus>
-    <input type="text" name="lastName" id="inputLastName" class="form-control" placeholder="<?php echo $this->translate('Last') ?>" required>
-    <label for="language"><?php echo $this->translate('Language') ?></label>
-    <select name="language" id="inputLanguage" class="form-control" required>
-        <option selected="selected">English</option>
-        <option>Español</option>
-        <option>Português (Brasil)</option>
-    </select>
-    <hr />
-    <label for="inputEmail"><?php echo $this->translate('Email address') ?></label>
-    <input type="text" name="email" id="inputEmail" class="form-control" placeholder="<?php echo $this->translate('Email address') ?>" required>
-    <label for="inputPassword"><?php echo $this->translate('Password') ?></label>
-    <input type="password" name="password" id="inputPassword" class="form-control" placeholder="<?php echo $this->translate('Password') ?>" required>
-    <div class="checkbox">
-        <label>
-            <input type="checkbox" value="remember-me"> <?php echo $this->translate('Remember me') ?>
-        </label>
+<div class="container sign">
+    <div class="col-md-6 col-md-offset-3">
+        <h2>Para começar o cadastro, você precisa conectar com o Facebook.
+        </h2>
+        <a href="#" class="btn btn-lg btn-facebook btn-primary btn-signup">
+
+        <b>facebook</b>
+            Conectar </a>
     </div>
-    <button class="btn btn-lg btn-info btn-block" type="submit"><?php echo $this->translate('Create account') ?></button>
-    <p>Please fill out all required (*) fields.</p>
-</form>
+    <div class="col-md-6 col-md-offset-3">
+        <p class='or'>
+            <span>ou</span>
+        </p>
+
+        <h2>Criar uma conta.
+        </h2>
+        <form>
+            <div class="form-group">
+                <label for="exampleInputEmail1">Seu e-mail *</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputPassword1">Digite sua senha *</label>
+                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+            </div>
+
+            <button type="submit" class="btn btn-lg btn-big btn-primary btn-signup">Cadastrar </button>
+        </form>
+        <p>Por favor, preencha todos os campos obrigatórios (*).</p>
+    </div>
+</div>
