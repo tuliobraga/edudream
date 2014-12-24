@@ -1,0 +1,18 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <?php echo $this->headTitle('Education Dream ')->setSeparator(' - ')->setAutoEscape(false) ?>
+    <?php echo $this->headMeta()
+                  ->appendName('viewport', 'width=device-width, initial-scale=1.0')
+                  ->appendHttpEquiv('X-UA-Compatible', 'IE=edge');
+    ?>
+
+    <?php echo $this->headLink(array('rel' => 'shortcut icon', 'type' => 'image/vnd.microsoft.icon', 'href' => $this->basePath() . '/img/favicon.ico'))
+                    ->prependStylesheet('http://fonts.googleapis.com/css?family=Raleway:400,100,300,200,500,600,800,700,900')
+                    ->prependStylesheet($this->basePath() . '/assets/css/style.css')
+                    ->prependStylesheet($this->basePath() . '/assets/css/bootstrap.min.css') 
+    ?>
+
+</head>
