@@ -67,15 +67,13 @@ body {
   .feature .feature-inner {
     overflow: hidden; }
   .feature .caption {
-    padding: 120px 0;
-    width: 50%;
-    max-width: 500px;
-    float: left; }
+    padding: 120px 0; }
   .feature h1 {
     color: #fff;
     text-transform: uppercase;
     font-weight: 100;
-    font-size: 43px; }
+    font-size: 43px;
+    max-width: 500px; }
     .feature h1 strong {
       font-weight: 800; }
     .feature h1 span {
@@ -100,8 +98,6 @@ body {
       color: #fff;
       border-color: #fff; }
   .feature .carousel {
-    float: right;
-    width: 50%;
     padding: 100px 0 0; }
     .feature .carousel .carousel-inner {
       overflow: hidden; }
@@ -151,12 +147,12 @@ body {
   padding: 50px 0; }
 
 footer {
-  padding: 50px 0;
+  padding: 0;
   background: #ececec;
   position: relative; }
   footer .buttons {
     text-align: center;
-    margin-bottom: 40px; }
+    padding: 50px 0; }
   footer .back-top {
     background: #56b5ff;
     width: 30px;
@@ -176,6 +172,38 @@ footer {
     transition: all 0.2s linear; }
     footer .back-top:hover {
       background-color: #0086ef !important; }
+  footer .footer-menu {
+    padding: 0 0 150px 0;
+    overflow: hidden; }
+    footer .footer-menu h3 {
+      text-transform: uppercase;
+      font-weight: 600;
+      font-size: 14px;
+      color: #999; }
+    footer .footer-menu ul {
+      margin: 0;
+      padding: 0; }
+      footer .footer-menu ul li {
+        list-style: none; }
+  footer .footer-social {
+    background-color: #444;
+    padding: 50px 0;
+    position: relative;
+    text-align: center;
+    color: #999; }
+    footer .footer-social:before {
+      position: absolute;
+      content: "";
+      width: 130px;
+      height: 130px; }
+    footer .footer-social:before {
+      background: url('../images/pig.png') no-repeat 0 0;
+      top: -120px;
+      left: 50%;
+      margin-left: -65px; }
+    footer .footer-social .logos {
+      text-align: center;
+      margin-bottom: 40px; }
 
 .sign h2 {
   text-align: center;
@@ -268,6 +296,9 @@ footer {
   .navbar-toggle .icon-bar {
     background-color: #56b5ff; }
 
+@media (max-width: 991px) {
+  footer .buttons {
+    padding: 50px 0 150px 0; } }
 @media (max-width: 1200px) {
   .navbar-header {
     float: none; }

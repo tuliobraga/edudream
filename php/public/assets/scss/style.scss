@@ -95,15 +95,16 @@ body {
 
 	.caption{
 		padding: 120px 0;
-		width: 50%;
-		max-width: 500px;
-		float: left;
+	 
+		
+ 
 	}
 	h1{
 		color: #fff;
 		text-transform: uppercase;
 		font-weight: 100;
 		font-size: 43px;
+		max-width: 500px;
 		
 
 		strong{
@@ -137,8 +138,6 @@ body {
 	}
 
 	.carousel{
-		float: right;
-		width: 50%;
 		padding: 100px 0 0;
 
 		.carousel-inner{
@@ -214,14 +213,14 @@ body {
 
 
 footer{
-	padding: 50px 0;
+	padding:0;
 	background: #ececec;
 	position: relative;
 	
 
 	.buttons{
 		text-align: center;
-		margin-bottom: 40px;
+		padding: 50px 0;
 		
 	}
 
@@ -240,6 +239,58 @@ footer{
 			background-color:  darken($azul, 20%) !important;
 		}
 		
+	}
+
+
+	.footer-menu{
+		padding: 0 0 150px 0;
+		overflow: hidden;
+
+		h3{
+			text-transform: uppercase;
+			font-weight: 600;
+			font-size: 14px;
+			color: #999;
+		}
+
+		ul{
+			margin: 0;
+			padding: 0;
+
+			li{
+				list-style:none;
+			}
+		}
+	}
+
+	.footer-social{
+		background-color: #444;
+		padding: 50px 0;
+		position: relative;
+		text-align: center;
+		color: #999;
+		
+		
+		&:before{
+			position: absolute;
+			content : "";
+			width: 130px;
+			height: 130px;
+		}
+
+		&:before{
+			background: image-url("pig.png") no-repeat 0 0 ;
+			top: -120px;
+			left: 50%;
+			margin-left: -65px;
+		}
+
+
+		.logos{
+			text-align: center;
+			margin-bottom: 40px;
+			
+		}
 	}
 }
 
@@ -359,6 +410,13 @@ footer{
 	}
 }
 
+@media (max-width: 991px) {
+	
+	footer .buttons{
+		padding: 50px 0 150px 0;
+	}
+
+}
 @media (max-width: 1200px) {
 	.navbar-header {
 		float: none;
