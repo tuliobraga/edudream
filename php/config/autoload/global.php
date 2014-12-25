@@ -17,7 +17,7 @@ return array(
        'User' => 'user/layout/layour.phtml',
    ),
     'db' => array(
-        'driver'         => 'Pdo',
+        'driver'         => 'PDO',
         'dsn'            => 'pgsql:dbname=edudream;host=localhost',
         'driver_options' => array(
             
