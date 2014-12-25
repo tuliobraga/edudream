@@ -441,6 +441,14 @@ footer{
 	.navbar-nav {
 		float: none!important;
 		margin-top: 7.5px;
+		padding-bottom: 20px !important;
+		.active{
+			display: none;
+		}
+
+		.btn{
+			margin: 20px !important;
+		}
 	}
 	.navbar-nav>li {
 		float: none;
@@ -452,6 +460,8 @@ footer{
 	.collapse.in{
 		display:block !important;
 	}
+
+
 }
 
 .form-group{
