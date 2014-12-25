@@ -4,6 +4,8 @@ namespace User;
 use Zend\Mvc\ModuleRouteListener;
 use Zend\Mvc\MvcEvent;
 use Zend\ModuleManager\ModuleManager;
+use User\Model\User;
+use User\Model\UserTable;
 
 class Module
 {
@@ -101,7 +103,19 @@ class Module
                     \Zend\Session\Container::setDefaultManager($sessionManager);
                     return $sessionManager;
                 },
+                'User\Model\UserTable' =>  function($sm) {
+                     $tableGateway = $sm->get('UserTableGateway');
+                     $table = new UserTable($tableGateway);
+                     return $table;
+                 },
+                 'UserTableGateway' => function ($sm) {
+                     $dbAdapter = $sm->get('Zend\Db\Adapter\Adapter');
+                     $resultSetPrototype = new \Zend\Db\ResultSet\ResultSet();
+                     $resultSetPrototype->setArrayObjectPrototype(new User());
+                     return new \Zend\Db\TableGateway\TableGateway('user', $dbAdapter, null, $resultSetPrototype);
+                 },
             ),
         );
     }
+
 }

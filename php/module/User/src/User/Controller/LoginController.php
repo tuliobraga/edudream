@@ -18,6 +18,15 @@ class LoginController extends AbstractActionController
 
     public function facebookAction() {
         \Facebook\FacebookSession::setDefaultApplication('1411744809117379', 'd4fa6295ed95a37967eccd8e47bd4618');
+        $helper = new \Facebook\FacebookRedirectLoginHelper('http://localhost:4567/edudream/php/public/login/process');
+        $url = $helper->getLoginUrl();
+        $this->redirect()->toUrl($url);
+        $viewModel = new ViewModel();
+        return $viewModel;
+    }
+
+    public function processAction() {
+        \Facebook\FacebookSession::setDefaultApplication('1411744809117379', 'd4fa6295ed95a37967eccd8e47bd4618');
         $helper = new \Facebook\FacebookRedirectLoginHelper('http://localhost:4567/edudream/php/public/login/facebook');
         
         try {

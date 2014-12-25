@@ -2,6 +2,21 @@
 $this->headLink()->appendStylesheet($this->basePath() . '/css/form-signup.css');
 ?>
 <div class="container sign">
+    <form method="post" action="?">
+    <div class="col-md-6 col-md-offset-3">
+        <h2>Selecione o seu tipo de usuário.</h2>
+        <div class="btn-group" data-toggle="buttons">
+            <label class="btn btn-signup active">
+                <input type="radio" value='S' name="role" id="optSonhador" autocomplete="off" checked> Sonhador
+            </label>
+            <label class="btn btn-signup">
+                <input type="radio" value='M' name="role" id="optMentor" autocomplete="off"> Mentor
+            </label>
+            <label class="btn btn-signup">
+                <input type="radio" value='O' name="role" id="optOrganizacao" autocomplete="off"> Organização
+            </label>
+        </div>
+    </div>
     <div class="col-md-6 col-md-offset-3">
         <h2>Para começar o cadastro, você precisa conectar com o Facebook.
         </h2>
@@ -17,18 +32,17 @@ $this->headLink()->appendStylesheet($this->basePath() . '/css/form-signup.css');
 
         <h2>Criar uma conta.
         </h2>
-        <form>
             <div class="form-group">
                 <label for="exampleInputEmail1">Seu e-mail *</label>
-                <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+                <input name="email" type="email" class="form-control" id="exampleInputEmail1" placeholder="Digite seu email">
             </div>
             <div class="form-group">
                 <label for="exampleInputPassword1">Digite sua senha *</label>
-                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                <input name="password" type="password" class="form-control" id="exampleInputPassword1" placeholder="Digite sua senha">
             </div>
 
             <button type="submit" class="btn btn-lg btn-big btn-primary btn-signup">Cadastrar </button>
-        </form>
         <p>Por favor, preencha todos os campos obrigatórios (*).</p>
     </div>
+    </form>
 </div>

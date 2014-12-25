@@ -1,7 +1,21 @@
 <div class="container sign">
     <div class="col-md-6 col-md-offset-3">
+        <h2>Selecione o seu tipo de usuário.</h2>
+        <div class="btn-group" data-toggle="buttons">
+            <label class="btn btn-signup active">
+                <input type="radio" value='S' name="options" id="optSonhador" autocomplete="off" checked> Sonhador
+            </label>
+            <label class="btn btn-signup">
+                <input type="radio" value='M' name="options" id="optMentor" autocomplete="off"> Mentor
+            </label>
+            <label class="btn btn-signup">
+                <input type="radio" value='O' name="options" id="optOrganizacao" autocomplete="off"> Organização
+            </label>
+        </div>
+    </div>
+    <div class="col-md-6 col-md-offset-3">
         <h2>Você pode acessar através do Facebook.</h2>
-        <a href="#" class="btn btn-lg btn-facebook btn-primary btn-signup">
+        <a href="<?php echo $this->basePath() ?>/login/facebook" class="btn btn-lg btn-facebook btn-primary btn-signup">
             <b>facebook</b>
                 Conectar </a>
     </div>

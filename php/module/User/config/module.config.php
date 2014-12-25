@@ -150,4 +150,17 @@ return array(
             ),
         ),
     ),
+    'factories' => array(
+        'User\Model\UserTable' =>  function($sm) {
+            $tableGateway = $sm->get('UserTableGateway');
+            $table = new AlbumTable($tableGateway);
+            return $table;
+        },
+        'UserTableGateway' => function ($sm) {
+            $dbAdapter = $sm->get('Zend\Db\Adapter\Adapter');
+            $resultSetPrototype = new ResultSet();
+            $resultSetPrototype->setArrayObjectPrototype(new User());
+            return new TableGateway('user', $dbAdapter, null, $resultSetPrototype);
+        },
+    ),
 );

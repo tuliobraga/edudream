@@ -37,7 +37,9 @@ body {
   .btn-signup:hover {
     background-color: #0086ef !important;
     border-color: #0086ef !important; }
-
+.btn-signup.active {
+    background-color: #0086ef !important;
+    border-color: #0086ef !important; }
 .navbar-wrapper {
   background-color: #f7f7f7;
   border-bottom: #eee solid 5px; }
