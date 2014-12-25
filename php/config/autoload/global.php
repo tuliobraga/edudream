@@ -22,8 +22,8 @@ return array(
         'driver_options' => array(
             
         ),
-        'username' => 'supnet',
-        'password' => '5upn3t4dm1n'
+        'username' => 'postgres',
+        'password' => 'supnet4dmin'
     ),
     'service_manager' => array(
         'factories' => array(
