@@ -34,7 +34,7 @@ class LoginController extends AbstractActionController
             $request = new \Facebook\FacebookRequest($session, 'GET', '/me');
             $response = $request->execute();
             $graphObject = $response->getGraphObject();
-            //var_dump($graphObject);
+            var_dump($graphObject);
         }
 
         die;
