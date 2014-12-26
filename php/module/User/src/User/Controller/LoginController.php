@@ -53,7 +53,6 @@ class LoginController extends AbstractActionController
 
             $usersTable = $this->getUsersTable();
             $r = $usersTable->insertUser($user);
-            var_dump($r);
         }
 
         die;

@@ -55,7 +55,9 @@ namespace User\Model;
             'email' => $user->email,
             'role'  => $user->role,
             'lastaccess'  => date('m/d/Y'),
-            'password' => $password
+            'password' => $password,
+            'name' => $user->name,
+            'facebookId' => $user->facebookId,
         );
 
         $this->tableGateway->insert($data);
