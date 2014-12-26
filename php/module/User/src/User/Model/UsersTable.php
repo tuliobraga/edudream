@@ -41,7 +41,7 @@ namespace User\Model;
                     
                 ))->where->equalTo('email', $email)->where->equalTo('password', $password);
         });
-var_dump($result->toArray());die;
+var_dump($result);die;
         return $result->toArray();
         $select = $this->tableGateway->select();
         $select->where->equalTo($email);
