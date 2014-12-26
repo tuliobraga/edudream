@@ -82,7 +82,7 @@ class LoginController extends AbstractActionController
         }
     }
 
-    public function login() {
+    public function execAction() {
         if($this->getRequest()->isPost()) {
             /** @todo filter form inputs */
             $email = $this->getRequest()->getPost('email');
@@ -98,13 +98,22 @@ class LoginController extends AbstractActionController
             }
             
             $usersTable = $this->getUsersTable();
-            $result = $usersTable->userIsValid($email, $password);
-            if($result === true) {
-                
+            $user = $usersTable->getUserByLogin($email, $password);
+            if($user === true) {
+                $container = new \Zend\Session\Container('login');
+                $container->user = $user;
+
+                if($user->isDreamer()) {
+                    $this->redirect()->toRoute('dream');
+                } else if ($user->isAngel()) {
+                    $this->redirect()->toRoute('angel');
+                }
+                $this->redirect()->toRoute('dream');
             } else {
                 $this->redirect()->toRoute('login', array('message' => 'Email ou senha inválidos.'));
             }
         }
+        die(' fada');
     }
 
     /**

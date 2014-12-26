@@ -28,6 +28,13 @@ namespace User\Model;
         }
         return $row;
     }
+
+    public function getUserByLogin($email, $password)
+    {
+        $rowset = $this->tableGateway->select(array('email' => $id, 'password', $password));
+        $row = $rowset->current();
+        return $row;
+    }
     
     public function getUserByFacebookId($id)
     {
