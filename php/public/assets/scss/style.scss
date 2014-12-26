@@ -476,33 +476,33 @@ footer{
 }
 
 .select-style {
-    padding: 10px;
-    margin: 0;
-    border: 1px solid #ccc;
-    width: 100%;
-    border-radius: 3px;
-    overflow: hidden;
-    background-color: #fff;
+	padding: 10px;
+	margin: 0;
+	border: 1px solid #ccc;
+	width: 100%;
+	border-radius: 3px;
+	overflow: hidden;
+	background-color: #fff;
 	font-size: 22px;
 	text-transform: uppercase  !important;
 	font-weight: 600;
-    background: #fff url("http://www.scottgood.com/jsg/blog.nsf/images/arrowdown.gif") no-repeat 95% 50%;
+	background: #fff url("http://www.scottgood.com/jsg/blog.nsf/images/arrowdown.gif") no-repeat 95% 50%;
 }
 
 .select-style select {
-    padding: 5px 8px;
-    width: 130%;
-    border: none;
-    box-shadow: none;
-    background-color: transparent;
-    background-image: none;
-    -webkit-appearance: none;
-       -moz-appearance: none;
-            appearance: none;
+	padding: 5px 8px;
+	width: 130%;
+	border: none;
+	box-shadow: none;
+	background-color: transparent;
+	background-image: none;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
 }
 
 .select-style select:focus {
-    outline: none;
+	outline: none;
 }
 
 
@@ -594,80 +594,91 @@ footer{
 
 
 .search {
-  background-image: url("../../layouts/bg.png");
-  height: 435px;
-  overflow: hidden;
-  background-repeat: no-repeat;
-  background-size: 100% auto;
+	background-image: url("../../layouts/bg.png");
+	height: 435px;
+	overflow: hidden;
+	background-repeat: no-repeat;
+	background-size: 100% auto;
 }
- 
+
 
 
 
 
 
 .search2 {
-  background-image: url("../../layouts/bg2.png");
-  height: 435px;
-  overflow: hidden;
-  background-repeat: no-repeat;
-  background-size: 100% auto;
+	background-image: url("../../layouts/bg2.png");
+	height: 435px;
+	overflow: hidden;
+	background-repeat: no-repeat;
+	background-size: 100% auto;
 }
- 
+
 
 .new_png {
-  max-width: 589px;
-  width: 100%;
-   margin-bottom: 100px;
+	max-width: 589px;
+	width: 100%;
+	margin-bottom: 100px;
 }
 
 
 .s_png {
-  max-width: 356px;
-  width: 100%;
-  margin-bottom: 100px;
+	max-width: 356px;
+	width: 100%;
+	margin-bottom: 100px;
 }
 
 
 .bt_more_png {
-  background-image: url("EX-edu 2-assets/bt-more.png");
-  position: absolute;
-  left: 603px;
-  top: 1656px;
-  width: 279px;
-  height: 41px;
-  z-index: 7;
+	background-image: url("EX-edu 2-assets/bt-more.png");
+	position: absolute;
+	left: 603px;
+	top: 1656px;
+	width: 279px;
+	height: 41px;
+	z-index: 7;
 }
 
 
 .fazer_png {
-  max-width: 1173px;
-  width: 100%;
-  margin-bottom: 100px;
+	max-width: 1173px;
+	width: 100%;
+	margin-bottom: 100px;
 }
 
 
 .ss_png {
-  max-width: 356px;
-  width: 100%;
-  margin-bottom: 100px;
+	max-width: 356px;
+	width: 100%;
+	margin-bottom: 100px;
 }
 
 .bt_2_png {
-  background-image: url("EX-edu 2-assets/bt-2.png");
-  position: absolute;
-  left: 603px;
-  top: 2546px;
-  width: 279px;
-  height: 41px;
-  z-index: 2;
+	background-image: url("EX-edu 2-assets/bt-2.png");
+	position: absolute;
+	left: 603px;
+	top: 2546px;
+	width: 279px;
+	height: 41px;
+	z-index: 2;
 }
 
 
 .search_png {
-  max-width: 782px;
-  width: 100%;
-  margin-bottom: 100px;
+	max-width: 782px;
+	width: 100%;
+	margin-bottom: 100px;
 }
 
 
+
+
+
+.btn-group{
+
+	label.active {
+		background-color: #0086ef !important;
+		border-color: #0086ef !important;
+	}
+
+}

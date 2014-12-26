@@ -2,10 +2,25 @@
     <div class="nav-footer">
         <div class="container">
             <div class="row">
-                <div class="buttons">
-                    <a class="btn btn-lg btn-primary btn-login" href="#" role="button">Entrar</a>
-                    <a class="btn btn-lg btn-primary btn-signup" href="#" role="button">Quero estudar</a>
-                </div>
+
+
+
+                <?php 
+                $container = new \Zend\Session\Container('login');
+                $user = $container->user;
+                if($user) {
+
+
+                    echo "<br /><br /><br />";
+
+                } else{
+
+                    echo "<div class='buttons'> <a class='btn btn-lg btn-primary btn-login' href='#' role='button'>Entrar</a> <a class='btn btn-lg btn-primary btn-signup' href='#' role='button'>Quero estudar</a>  </div>";
+                }
+                ?>
+
+
+
                 <div class="col-md-9 visible-md visible-lg footer-menu">
                     <div class="col-md-2">
                         <h3>Sobre</h3>
@@ -44,6 +59,17 @@
                     </div>
                 </div>
                 <div class="col-md-3 visible-md visible-lg">
+
+                    <div id="fb-root"></div>
+                    <script>(function(d, s, id) {
+                        var js, fjs = d.getElementsByTagName(s)[0];
+                        if (d.getElementById(id)) return;
+                        js = d.createElement(s); js.id = id;
+                        js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&appId=124602041065233&version=v2.0";
+                        fjs.parentNode.insertBefore(js, fjs);
+                    }(document, 'script', 'facebook-jssdk'));</script>
+
+                    
                     <div class="fb-like-box" data-href="https://www.facebook.com/EducationDream" data-colorscheme="light" data-show-faces="true" data-header="false" data-stream="false" data-show-border="false"></div>
                 </div>
             </div>

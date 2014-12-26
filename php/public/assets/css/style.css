@@ -478,3 +478,7 @@ footer {
   max-width: 782px;
   width: 100%;
   margin-bottom: 100px; }
+
+.btn-group label.active {
+  background-color: #0086ef !important;
+  border-color: #0086ef !important; }

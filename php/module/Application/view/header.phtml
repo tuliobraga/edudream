@@ -29,8 +29,25 @@
                         <li><a href="#ajude-um-nerd">Ajude um Nerd</a></li>
                         <li><a href="#fazejamento">Fazejamento</a></li>
                         <li><a href="#blog">Blog</a></li>
-                        <li><a class="btn btn-lg btn-primary btn-login" href="<?php echo $this->basePath() ?>/login" role="button">Entrar</a></li>
-                        <li><a class="btn btn-lg btn-primary btn-signup" href="<?php echo $this->basePath() ?>/sign-up" role="button">Conte seu sonho</a></li>
+
+
+
+                        <?php 
+                        $container = new \Zend\Session\Container('login');
+                        $user = $container->user;
+                        if($user) {
+                            
+                            
+                            echo "<li><a class='btn btn-lg btn-primary btn-login' href='". $this->basePath() ."/' role='button'> Bem vindo ".$user->name ."</a></li>";
+
+                        } else{
+
+                            echo "<li><a class='btn btn-lg btn-primary btn-login' href='". $this->basePath() ."/login' role='button'>Entrar</a></li> <li><a class='btn btn-lg btn-primary btn-signup' href='". $this->basePath() ."/sign-up' role='button'>Conte seu sonho</a></li>";
+                        }
+                        ?>
+
+
+                        
                     </ul>
                 </div>
             </div>
