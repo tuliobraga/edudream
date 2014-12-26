@@ -14,7 +14,7 @@ class SignUpController extends AbstractActionController
             /** @todo filter form inputs */
             $name = $this->getRequest()->getPost('name');
             $email = $this->getRequest()->getPost('email');
-            $password = $this->getRequest()->getPost('password');
+            $password = md5($this->getRequest()->getPost('password'));
             $role = $this->getRequest()->getPost('role');
             
             if(!$name)

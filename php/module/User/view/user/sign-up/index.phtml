@@ -11,13 +11,13 @@ $this->headLink()->appendStylesheet($this->basePath() . '/css/form-signup.css');
         <h2>Selecione o seu tipo de usuário.</h2>
         <div class="btn-group" data-toggle="buttons" style="width:320px; margin: 0 auto;display: block;clear: both;float: none; overflow: hidden;">
             <label class="btn btn-signup active">
-                <input type="radio" value='S' name="role" id="optSonhador" autocomplete="off" checked onclick="document.getElementById('hiddenRole').value = 'S';"> Sonhador
+                <input type="radio" value='S' name="role" id="optSonhador" autocomplete="off" checked onchange="alert('click');document.getElementById('hiddenRole').value = 'S';"> Sonhador
             </label>
             <label class="btn btn-signup">
-                <input type="radio" value='M' name="role" id="optMentor" autocomplete="off" onclick="document.getElementById('hiddenRole').value = 'M';"> Mentor
+                <input type="radio" value='M' name="role" id="optMentor" autocomplete="off" onchange="document.getElementById('hiddenRole').value = 'M';"> Mentor
             </label>
             <label class="btn btn-signup">
-                <input type="radio" value='O' name="role" id="optOrganizacao" autocomplete="off" onclick="document.getElementById('hiddenRole').value = 'O';"> Organização
+                <input type="radio" value='O' name="role" id="optOrganizacao" autocomplete="off" onchange="document.getElementById('hiddenRole').value = 'O';"> Organização
             </label>
         </div>
     </div>
