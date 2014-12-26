@@ -59,7 +59,7 @@ namespace User\Model;
             'name' => $user->name,
             'facebookid' => $user->facebookid,
         );
-var_dump($data);
+
         $r = $this->tableGateway->insert($data);
         $user->id = $this->tableGateway->lastInsertValue;
         return $r;
