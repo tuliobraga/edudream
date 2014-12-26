@@ -113,7 +113,6 @@ class LoginController extends AbstractActionController
                 $this->redirect()->toRoute('login', array('message' => 'Email ou senha inválidos.'));
             }
         }
-        die(' fada');
     }
 
     /**
