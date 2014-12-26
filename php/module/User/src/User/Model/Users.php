@@ -12,12 +12,14 @@ namespace User\Model;
     public $email;
     public $role;
     public $lastaccess;
+    public $facebookid;
+    public $name;
     
     public function exchangeArray($data)
     {
         $this->id = (!empty($data['id'])) ? $data['id'] : null;
         $this->name = (!empty($data['name'])) ? $data['name'] : null;
-        $this->facebookId = (!empty($data['facebookId'])) ? $data['facebookId'] : null;
+        $this->facebookId = (!empty($data['facebookid'])) ? $data['facebookid'] : null;
         $this->email = (!empty($data['email'])) ? $data['email'] : null;
         $this->role  = (!empty($data['role'])) ? $data['role'] : null;
         $this->lastaccess = (!empty($data['lastaccess'])) ? $data['lastaccess'] : null;;

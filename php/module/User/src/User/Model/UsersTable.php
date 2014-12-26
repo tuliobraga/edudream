@@ -57,7 +57,7 @@ namespace User\Model;
             'lastaccess'  => date('m/d/Y'),
             'password' => $password,
             'name' => $user->name,
-            'facebookId' => $user->facebookId,
+            'facebookid' => $user->facebookid,
         );
 
         $this->tableGateway->insert($data);

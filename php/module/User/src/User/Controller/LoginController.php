@@ -44,7 +44,7 @@ class LoginController extends AbstractActionController
 
             $data = array(
                 'name' =>  $graphObject->getProperty('name'),
-                'facebookId' => $graphObject->getProperty('id'),
+                'facebookid' => $graphObject->getProperty('id'),
                 'role' => 'S',
             );
 
