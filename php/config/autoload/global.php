@@ -18,7 +18,7 @@ return array(
    ),
     'db' => array(
         'driver'         => 'Pdo',
-        'dsn'            => 'pgsql:dbname=edudream;host=104.236.104.98',
+        'dsn'            => 'pgsql:dbname=edudream;host=127.0.0.1',
         'driver_options' => array(
             
         ),
