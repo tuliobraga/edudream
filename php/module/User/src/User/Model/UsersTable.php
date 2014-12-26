@@ -31,7 +31,7 @@ namespace User\Model;
 
     public function getUserByLogin($email, $password)
     {
-        $result = $this->tableGateway->select(function (Select $select) use ($email, $password) {
+        $result = $this->tableGateway->select(function (\Zend\Db\Sql\Select $select) use ($email, $password) {
             $select
                 ->columns(array(
                     'name',
