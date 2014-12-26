@@ -18,13 +18,13 @@ class SignUpController extends AbstractActionController
             $role = $this->getRequest()->getPost('role');
             
             if(!$name)
-                throw new Exception('Campo Nome é obrigatório!');
+                throw new \Exception('Campo Nome é obrigatório!');
             if(!$email)
-                throw new Exception('Campo Email é obrigatório!');
+                throw new \Exception('Campo Email é obrigatório!');
             if(!$password)
-                throw new Exception('Campo Password é obrigatório!');
+                throw new \Exception('Campo Password é obrigatório!');
             if(!$role)
-                throw new Exception('Campo Role é obrigatório!');
+                throw new \Exception('Campo Role é obrigatório!');
             
             $data = array(
                 'name' => $name,
