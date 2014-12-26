@@ -54,7 +54,7 @@ namespace User\Model;
         $data = array(
             'email' => $user->email,
             'role'  => $user->role,
-            'lastaccess'  => $user->lastAccess,
+            'lastaccess'  => date('m/d/Y'),
             'password' => $password
         );
 
