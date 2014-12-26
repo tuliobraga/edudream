@@ -45,7 +45,7 @@ class LoginController extends AbstractActionController
             $request = new \Facebook\FacebookRequest($session, 'GET', '/me');
             $response = $request->execute();
             $graphObject = $response->getGraphObject();
-            
+            var_dump($graphObject);die;
             $data = array(
                 'email' => $graphObject->email,
                 'facebookId' => $graphObject->id,
@@ -57,7 +57,7 @@ class LoginController extends AbstractActionController
             $user->exchangeArray($data);
             $usersTable = $this->getUsersTable();
             $usersTable->insertUser($user, $password);
-            var_dump($data);
+            var_dump($data);die;
 
             
         }

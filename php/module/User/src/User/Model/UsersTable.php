@@ -34,7 +34,7 @@ namespace User\Model;
         $data = array(
             'email' => $user->email,
             'role'  => $user->role,
-            'lastaccess'  => $user->lastAccess,
+            'lastaccess'  => $user->lastaccess,
         );
 
         $id = (int) $user->id;
@@ -59,6 +59,7 @@ namespace User\Model;
         );
 
         $this->tableGateway->insert($data);
+        $user->id = $this->tableGateway->lastInsertValue;
     }
 
     public function deleteUser($id)

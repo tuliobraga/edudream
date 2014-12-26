@@ -24,7 +24,10 @@ class SignUpController extends AbstractActionController
 
             $userTable = $this->getUsersTable();
             $userTable->insertUser($user, $password);
-            $this->redirect()->toRoute("/home");
+            
+            // init session
+            
+            $this->redirect()->toRoute("home");
         }
 
         return new ViewModel();
