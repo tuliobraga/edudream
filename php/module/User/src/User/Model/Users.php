@@ -14,6 +14,7 @@ namespace User\Model;
     public $lastaccess;
     public $facebookid;
     public $name;
+    public $password;
     
     public function exchangeArray($data)
     {
@@ -22,7 +23,8 @@ namespace User\Model;
         $this->facebookid = (!empty($data['facebookid'])) ? $data['facebookid'] : null;
         $this->email = (!empty($data['email'])) ? $data['email'] : null;
         $this->role  = (!empty($data['role'])) ? $data['role'] : null;
-        $this->lastaccess = (!empty($data['lastaccess'])) ? $data['lastaccess'] : null;;
+        $this->lastaccess = (!empty($data['lastaccess'])) ? $data['lastaccess'] : null;
+        $this->password = (!empty($data['password'])) ? $data['password'] : null;;
     }
 
     public function isDreamer() {

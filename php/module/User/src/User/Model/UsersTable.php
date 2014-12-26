@@ -31,23 +31,12 @@ namespace User\Model;
 
     public function getUserByLogin($email, $password)
     {
-        $result = $this->tableGateway->select(function (\Zend\Db\Sql\Select $select) use ($email, $password) {
-            $select
-                ->columns(array(
-                    'name',
-                    'email',
-                    'facebookid',
-                    
-                    
-                ))->where->equalTo('email', $email)->where->equalTo('password', $password);
-        });
-var_dump($result);die;
-        return $result->toArray();
-        $select = $this->tableGateway->select();
-        $select->where->equalTo($email);
-        $rowset = $select->where->equalTo($password);
-
+        $id  = (int) $id;
+        $rowset = $this->tableGateway->select(array('email' => $email));
         $row = $rowset->current();
+        if($row->password !== $password) {
+            $row = false;
+        }
         return $row;
     }
     
