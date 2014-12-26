@@ -13,13 +13,13 @@
 
         <div class="row">
             <h2>
-<?php 
-$container = new \Zend\Session\Container('login');
-$user = $container->user;
-if($user) {
-    echo 'Bem vindo '.$user->name . '!';
-?>
-</h2>
+            <?php 
+            $container = new \Zend\Session\Container('login');
+            $user = $container->user;
+            if($user) {
+                echo 'Bem vindo '.$user->name . '!';
+            ?>
+            </h2>
             <div class="col-md-4 text-center">
                 <img src="./layouts/s1.png" alt="" class="s_png">
             </div>
@@ -75,7 +75,7 @@ if($user) {
         } else {
             echo "Cadastre-se para ter acesso exclusivo aos principais mentores!";
         }
-?>        
+        ?>        
 
         <hr />
 

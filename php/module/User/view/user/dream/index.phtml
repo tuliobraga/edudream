@@ -12,7 +12,14 @@
     <div class="container home">
 
         <div class="row">
-
+            <h2>
+            <?php 
+            $container = new \Zend\Session\Container('login');
+            $user = $container->user;
+            if($user) {
+                echo 'Bem vindo '.$user->name . '!';
+            ?>
+            </h2>
             <div class="col-md-12 text-center">
                 <img src="./layouts/new.png" alt="" class="new_png">
             </div>
@@ -70,7 +77,11 @@
 
         </div>
         
-
+        <?php
+        } else {
+            echo "Cadastre-se para ter acesso exclusivo aos principais sonhadores!";
+        }
+        ?> 
         <hr />
 
 
