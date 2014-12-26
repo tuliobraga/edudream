@@ -13,6 +13,7 @@ class LoginController extends AbstractActionController
     {
         // verify if input is a valid role
         if(isset($_GET['role']) && in_array($_GET['role'], array('S', 'M', 'O'))) {
+            $_SESSION['role'] = $_GET['role'];
             $baseUrl = $this->getRequest()->getBaseUrl();
             $url = 'http://' . $_SERVER['HTTP_HOST'] . $baseUrl . '/login/facebook';
             \Facebook\FacebookSession::setDefaultApplication('1410290089262851', '71144b560323842d1a6fffeb9cbec9e7');

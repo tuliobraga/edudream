@@ -24,4 +24,12 @@ namespace User\Model;
         $this->role  = (!empty($data['role'])) ? $data['role'] : null;
         $this->lastaccess = (!empty($data['lastaccess'])) ? $data['lastaccess'] : null;;
     }
+
+    public function isDreamer() {
+        return $this->role === self::ROLE_SONHADOR;
+    }
+
+    public function isAngel() {
+        return $this->role === self::ROLE_MENTOR;
+    }
  }
