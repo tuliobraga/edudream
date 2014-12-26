@@ -11,13 +11,13 @@ namespace User\Model;
     public $id;
     public $email;
     public $role;
-    public $lastAccess;
+    public $lastaccess;
     
     public function exchangeArray($data)
     {
         $this->id = (!empty($data['id'])) ? $data['id'] : null;
         $this->email = (!empty($data['email'])) ? $data['email'] : null;
         $this->role  = (!empty($data['role'])) ? $data['role'] : null;
-        $this->lastAccess = (!empty($data['lastAccess'])) ? $data['lastAccess'] : null;;
+        $this->lastaccess = (!empty($data['lastaccess'])) ? $data['lastaccess'] : null;;
     }
  }

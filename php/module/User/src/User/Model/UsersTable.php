@@ -34,7 +34,7 @@ namespace User\Model;
         $data = array(
             'email' => $user->email,
             'role'  => $user->role,
-            'lastAccess'  => $user->lastAccess,
+            'lastaccess'  => $user->lastAccess,
         );
 
         $id = (int) $user->id;
@@ -44,7 +44,7 @@ namespace User\Model;
             if ($this->getAlbum($id)) {
                 $this->tableGateway->update($data, array('id' => $id));
             } else {
-                throw new \Exception('Album id does not exist');
+                throw new \Exception('User id does not exist');
             }
         }
      }
@@ -54,7 +54,7 @@ namespace User\Model;
         $data = array(
             'email' => $user->email,
             'role'  => $user->role,
-            'lastAccess'  => $user->lastAccess,
+            'lastaccess'  => $user->lastAccess,
             'password' => $password
         );
 
