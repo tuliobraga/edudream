@@ -429,6 +429,13 @@ footer {
   background-repeat: no-repeat;
   background-size: 100% auto; }
 
+.search2 {
+  background-image: url("../../layouts/bg2.png");
+  height: 435px;
+  overflow: hidden;
+  background-repeat: no-repeat;
+  background-size: 100% auto; }
+
 .new_png {
   max-width: 589px;
   width: 100%;
