@@ -36,6 +36,7 @@ namespace User\Model;
         if($row->password !== $password) {
             $row = false;
         }
+
         return $row;
     }
     

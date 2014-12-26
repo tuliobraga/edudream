@@ -99,7 +99,7 @@ class LoginController extends AbstractActionController
             
             $usersTable = $this->getUsersTable();
             $user = $usersTable->getUserByLogin($email, $password);
-            if($user === true) {
+            if($user) {
                 $container = new \Zend\Session\Container('login');
                 $container->user = $user;
 
