@@ -7,12 +7,13 @@ use Zend\View\Model\ViewModel;
 class LoginController extends AbstractActionController
 {
     protected $usersTable;
-    
+    //1410290089262851 production
+    // 71144b560323842d1a6fffeb9cbec9e7
     public function indexAction()
     {
         $baseUrl = $this->getRequest()->getBaseUrl();
         $url = 'http://' . $_SERVER['HTTP_HOST'] . $baseUrl . '/login/facebook';
-        \Facebook\FacebookSession::setDefaultApplication('1411744809117379', 'd4fa6295ed95a37967eccd8e47bd4618');
+        \Facebook\FacebookSession::setDefaultApplication('1410290089262851', '71144b560323842d1a6fffeb9cbec9e7');
         $helper = new \Facebook\FacebookRedirectLoginHelper($url);
         $loginUrl = $helper->getLoginUrl();
         $viewModel = new ViewModel();
@@ -22,7 +23,7 @@ class LoginController extends AbstractActionController
 
     public function facebookAction() {
         $baseUrl = $this->getRequest()->getBaseUrl();
-        \Facebook\FacebookSession::setDefaultApplication('1411744809117379', 'd4fa6295ed95a37967eccd8e47bd4618');
+        \Facebook\FacebookSession::setDefaultApplication('1410290089262851', '71144b560323842d1a6fffeb9cbec9e7');
         $url = 'http://' . $_SERVER['HTTP_HOST'] . $baseUrl . '/login/facebook';
         $helper = new \Facebook\FacebookRedirectLoginHelper($url);
         
