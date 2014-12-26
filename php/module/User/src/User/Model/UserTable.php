@@ -3,7 +3,7 @@ namespace User\Model;
 
  use Zend\Db\TableGateway\TableGateway;
 
- class UsersTable
+ class UserTable
  {
     protected $tableGateway;
 

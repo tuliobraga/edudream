@@ -1,7 +1,7 @@
 <?php 
 namespace User\Model;
 
- class Users
+ class User
  {
 
     const ROLE_SONHADOR = 'S';
