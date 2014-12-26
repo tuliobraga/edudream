@@ -32,8 +32,8 @@ namespace User\Model;
     public function getUserByLogin($email, $password)
     {
         $select = $this->tableGateway->select();
-        $rowset = $select->where(array('email' => $email))
-                ->where(array('password' => $password));
+        $select->where->equalTo($email);
+        $rowset = $select->where->equalTo($password);
 
         $row = $rowset->current();
         return $row;
