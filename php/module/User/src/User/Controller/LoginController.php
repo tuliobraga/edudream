@@ -64,53 +64,18 @@ class LoginController extends AbstractActionController
                 $usersTable = $this->getUsersTable();
                 $r = $usersTable->insertUser($user);
             }
+
+            $container = new \Zend\Session\Container('login');
+            $container->user = $user;
+
+            if($user->isDreamer()) {
+                $this->redirect()->toRoute('dream');
+            } else if ($user->isAngel()) {
+                $this->redirect()->toRoute('angel');
+            }
+        } else {
+            throw new \Exception("Could not request a facebook session.");
         }
-
-        if($user->isDreamer()) {
-            $this->redirect()->toRoute('dream');
-        } else if ($user->isAngel()) {
-            $this->redirect()->toRoute('angel');
-        }
-    }
-
-    public function processAction() {
-        \Facebook\FacebookSession::setDefaultApplication('1411744809117379', 'd4fa6295ed95a37967eccd8e47bd4618');
-        $helper = new \Facebook\FacebookRedirectLoginHelper('http://localhost:4567/edudream/php/public/login/facebook');
-        
-        try {
-            $session = $helper->getSessionFromRedirect();
-        } catch(\Facebook\FacebookRequestException $ex) {
-            // When Facebook returns an error
-            throw $ex;
-        } catch(\Exception $ex) {
-            // When validation fails or other local issues
-            throw $ex;
-        }
-
-        if ($session) {
-            $request = new \Facebook\FacebookRequest($session, 'GET', '/me');
-            $response = $request->execute();
-            $graphObject = $response->getGraphObject();
-            var_dump($graphObject);die;
-            $data = array(
-                'email' => $graphObject->email,
-                'facebookId' => $graphObject->id,
-                'role' => 'S',
-                'password' => '*'
-            );
-
-            $user = new \User\Model\Users();
-            $user->exchangeArray($data);
-            $usersTable = $this->getUsersTable();
-            $usersTable->insertUser($user, $password);
-            var_dump($data);die;
-
-            
-        }
-
-        die;
-        $viewModel = new ViewModel();
-        return $viewModel;
     }
 
     /**
