@@ -28,6 +28,14 @@ namespace User\Model;
         }
         return $row;
     }
+    
+    public function getUserByFacebookId($id)
+    {
+        $id  = (int) $id;
+        $rowset = $this->tableGateway->select(array('facebookid' => $id));
+        $row = $rowset->current();
+        return $row;
+    }
 
      public function saveUser(Users $user)
      {

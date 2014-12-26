@@ -42,19 +42,25 @@ class LoginController extends AbstractActionController
             $response = $request->execute();
             $graphObject = $response->getGraphObject(\Facebook\GraphUser::className());
 
+            $facebookid = $graphObject->getProperty('id');
             $data = array(
                 'name' =>  $graphObject->getProperty('name'),
-                'facebookid' => $graphObject->getProperty('id'),
+                'facebookid' => $facebookid,
                 'role' => 'S',
             );
-
-            $user = new \User\Model\Users();
-            $user->exchangeArray($data);
-
+            
             $usersTable = $this->getUsersTable();
-            $r = $usersTable->insertUser($user);
-        }
+            $user = $usersTable->getUserByFacebookId($facebookid);
 
+            if(!$user) {
+                $user = new \User\Model\Users();
+                $user->exchangeArray($data);
+
+                $usersTable = $this->getUsersTable();
+                $r = $usersTable->insertUser($user);
+            }
+        }
+var_dump($user);
         die;
         $viewModel = new ViewModel();
         return $viewModel;
