@@ -111,7 +111,7 @@ class Module
                  'UsersTableGateway' => function ($sm) {
                      $dbAdapter = $sm->get('Zend\Db\Adapter\Adapter');
                      $resultSetPrototype = new \Zend\Db\ResultSet\ResultSet();
-                     $resultSetPrototype->setArrayObjectPrototype(new Users());
+                     $resultSetPrototype->setArrayObjectPrototype(new Model\Users());
                      return new \Zend\Db\TableGateway\TableGateway('users', $dbAdapter, null, $resultSetPrototype);
                  },
             ),
