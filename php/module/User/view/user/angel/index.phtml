@@ -16,7 +16,6 @@
 <?php 
 $container = new \Zend\Session\Container('login');
 $user = $container->user;
-var_dump($user);
 if($user) {
 ?>
 </h2>
@@ -72,6 +71,8 @@ if($user) {
 
         </div>
         <?php
+        } else {
+            echo "Cadastre-se para ter acesso exclusivo aos principais mentores!"
         }
 ?>        
 
