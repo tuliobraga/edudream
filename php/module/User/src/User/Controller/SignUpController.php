@@ -36,11 +36,11 @@ class SignUpController extends AbstractActionController
      */
     public function getUsersTable()
      {
-         if (!$this->userTable) {
+         if (!$this->usersTable) {
              $sm = $this->getServiceLocator();
-             $this->userTable = $sm->get('User\Model\UsersTable');
+             $this->usersTable = $sm->get('User\Model\UsersTable');
          }
-         return $this->userTable;
+         return $this->usersTable;
      }
     
 }

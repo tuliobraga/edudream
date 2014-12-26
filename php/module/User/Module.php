@@ -4,8 +4,8 @@ namespace User;
 use Zend\Mvc\ModuleRouteListener;
 use Zend\Mvc\MvcEvent;
 use Zend\ModuleManager\ModuleManager;
-use User\Model\User;
-use User\Model\UserTable;
+use User\Model\Users;
+use User\Model\UsersTable;
 
 class Module
 {
@@ -103,8 +103,8 @@ class Module
                     \Zend\Session\Container::setDefaultManager($sessionManager);
                     return $sessionManager;
                 },
-                'Users\Model\UsersTable' =>  function($sm) {
-                     $tableGateway = $sm->get('UserTableGateway');
+                'User\Model\UsersTable' =>  function($sm) {
+                     $tableGateway = $sm->get('UsersTableGateway');
                      $table = new UsersTable($tableGateway);
                      return $table;
                  },
