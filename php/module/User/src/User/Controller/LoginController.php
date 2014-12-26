@@ -47,10 +47,10 @@ class LoginController extends AbstractActionController
                 'facebookid' => $graphObject->getProperty('id'),
                 'role' => 'S',
             );
-var_dump($data);
+
             $user = new \User\Model\Users();
             $user->exchangeArray($data);
-var_dump($user);
+
             $usersTable = $this->getUsersTable();
             $r = $usersTable->insertUser($user);
         }

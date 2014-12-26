@@ -19,7 +19,7 @@ namespace User\Model;
     {
         $this->id = (!empty($data['id'])) ? $data['id'] : null;
         $this->name = (!empty($data['name'])) ? $data['name'] : null;
-        $this->facebookId = (!empty($data['facebookid'])) ? $data['facebookid'] : null;
+        $this->facebookid = (!empty($data['facebookid'])) ? $data['facebookid'] : null;
         $this->email = (!empty($data['email'])) ? $data['email'] : null;
         $this->role  = (!empty($data['role'])) ? $data['role'] : null;
         $this->lastaccess = (!empty($data['lastaccess'])) ? $data['lastaccess'] : null;;
