@@ -59,9 +59,10 @@ namespace User\Model;
             'name' => $user->name,
             'facebookid' => $user->facebookid,
         );
-
-        $this->tableGateway->insert($data);
+var_dump($data);
+        $r = $this->tableGateway->insert($data);
         $user->id = $this->tableGateway->lastInsertValue;
+        return $r;
     }
 
     public function deleteUser($id)
