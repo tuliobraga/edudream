@@ -31,11 +31,9 @@ namespace User\Model;
 
     public function getUserByLogin($email, $password)
     {
-        $id  = (int) $id;
         $rowset = $this->tableGateway->select(array('email' => $email));
         $row = $rowset->current();
-        var_dump($row);die;
-        if($row->password !== $password) {
+        if($row->password !== md5($password)) {
             $row = false;
         }
         return $row;
