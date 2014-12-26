@@ -11,14 +11,18 @@ class LoginController extends AbstractActionController
     // 71144b560323842d1a6fffeb9cbec9e7
     public function indexAction()
     {
-        $baseUrl = $this->getRequest()->getBaseUrl();
-        $url = 'http://' . $_SERVER['HTTP_HOST'] . $baseUrl . '/login/facebook';
-        \Facebook\FacebookSession::setDefaultApplication('1410290089262851', '71144b560323842d1a6fffeb9cbec9e7');
-        $helper = new \Facebook\FacebookRedirectLoginHelper($url);
-        $loginUrl = $helper->getLoginUrl();
-        $viewModel = new ViewModel();
-        $viewModel->setVariable('loginUrl', $loginUrl);
-        return $viewModel;
+        // verify if input is a valid role
+        if(isset($_GET['role']) && in_array($_GET['role'], array('S', 'M', 'O'))) {
+            $baseUrl = $this->getRequest()->getBaseUrl();
+            $url = 'http://' . $_SERVER['HTTP_HOST'] . $baseUrl . '/login/facebook';
+            \Facebook\FacebookSession::setDefaultApplication('1410290089262851', '71144b560323842d1a6fffeb9cbec9e7');
+            $helper = new \Facebook\FacebookRedirectLoginHelper($url);
+            $loginUrl = $helper->getLoginUrl();
+            $this->redirect()->toUrl($loginUrl);;
+        } else {
+            $viewModel = new ViewModel();
+            return $viewModel;
+        }
     }
 
     public function facebookAction() {
@@ -46,7 +50,7 @@ class LoginController extends AbstractActionController
             $data = array(
                 'name' =>  $graphObject->getProperty('name'),
                 'facebookid' => $facebookid,
-                'role' => 'S',
+                'role' => $_SESSION['role'],
             );
             
             $usersTable = $this->getUsersTable();

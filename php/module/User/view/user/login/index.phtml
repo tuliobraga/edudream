@@ -2,18 +2,18 @@
 <div class="main">
         <div class="container sign">
 
-  
+  <form method="get" action="?">
   <div class="col-md-6 col-md-offset-3">
         <h2>Selecione o seu tipo de usuário.</h2>
         <div class="btn-group" data-toggle="buttons" style="width:320px; margin: 0 auto;display: block;clear: both;float: none; overflow: hidden;">
             <label class="btn btn-signup active">
-                <input type="radio" value='S' name="role" id="optSonhador" autocomplete="off" checked onclick="role = S"> Sonhador
+                <input type="radio" value='S' name="role" id="optSonhador" autocomplete="off" checked> Sonhador
             </label>
             <label class="btn btn-signup">
-                <input type="radio" value='M' name="role" id="optMentor" autocomplete="off" onclick="role = M"> Mentor
+                <input type="radio" value='M' name="role" id="optMentor" autocomplete="off"> Mentor
             </label>
             <label class="btn btn-signup">
-                <input type="radio" value='O' name="role" id="optOrganizacao" autocomplete="off" onclick="role = O"> Organização
+                <input type="radio" value='O' name="role" id="optOrganizacao" autocomplete="off"> Organização
             </label>
         </div>
     </div> 
@@ -28,11 +28,11 @@
 
        <h2>Acesse com sua conta do facebook.
                     </h2>
-        <a onclick="url = '<?php echo $this->basePath() ?>?role='+role; console.log(url); window.location.href = url" class="btn btn-lg btn-facebook btn-primary btn-signup">
+        <button type="submit" class="btn btn-lg btn-facebook btn-primary btn-signup">
             <b>facebook</b>
-            Conectar </a>
+            Conectar </button>
         </div>
-
+    </form>
 
 
 
