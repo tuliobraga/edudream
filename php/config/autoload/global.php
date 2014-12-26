@@ -14,11 +14,11 @@
 return array(
    'module_layouts' => array(
        'Application' => 'application/layout/layout.phtml',
-       'User' => 'user/layout/layour.phtml',
+       'User' => 'user/layout/layout.phtml',
    ),
     'db' => array(
         'driver'         => 'Pdo',
-        'dsn'            => 'pgsql:dbname=edudream;host=localhost',
+        'dsn'            => 'pgsql:dbname=edudream;host=104.236.104.98',
         'driver_options' => array(
             
         ),

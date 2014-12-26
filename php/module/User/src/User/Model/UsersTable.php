@@ -49,7 +49,7 @@ namespace User\Model;
         }
      }
 
-    public function insertUser(Users $user, $password)
+    public function insertUser(Users $user, $password = null)
     {
         $data = array(
             'email' => $user->email,
