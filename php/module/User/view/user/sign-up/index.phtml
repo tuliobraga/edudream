@@ -3,9 +3,10 @@ $this->headLink()->appendStylesheet($this->basePath() . '/css/form-signup.css');
 ?>
 <div class="container sign">
     <form method="post" action="?">
+   
     <div class="col-md-6 col-md-offset-3">
         <h2>Selecione o seu tipo de usuário.</h2>
-        <div class="btn-group" data-toggle="buttons">
+        <div class="btn-group" data-toggle="buttons" style="width:320px; margin: 0 auto;display: block;clear: both;float: none; overflow: hidden;">
             <label class="btn btn-signup active">
                 <input type="radio" value='S' name="role" id="optSonhador" autocomplete="off" checked> Sonhador
             </label>
@@ -17,6 +18,7 @@ $this->headLink()->appendStylesheet($this->basePath() . '/css/form-signup.css');
             </label>
         </div>
     </div>
+
     <div class="col-md-6 col-md-offset-3">
         <h2>Para começar o cadastro, você precisa conectar com o Facebook.
         </h2>
