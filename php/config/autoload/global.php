@@ -18,12 +18,12 @@ return array(
    ),
     'db' => array(
         'driver'         => 'Pdo',
-        'dsn'            => 'pgsql:dbname=edudream;host=104.236.104.98',
+        'dsn'            => 'pgsql:dbname=edudream;host=localhost',
         'driver_options' => array(
             
         ),
-        'username' => 'postgres',
-        'password' => 'supnet4dmin'
+        'username' => 'supnet',
+        'password' => '5upn3t4dm1n'
     ),
     'service_manager' => array(
         'factories' => array(

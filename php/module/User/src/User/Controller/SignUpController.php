@@ -6,7 +6,7 @@ use Zend\View\Model\ViewModel;
 
 class SignUpController extends AbstractActionController
 {
-    protected $usersTable;
+    protected $userTable;
 
     public function indexAction()
     {
@@ -22,9 +22,12 @@ class SignUpController extends AbstractActionController
             $user = new \User\Model\Users();
             $user->exchangeArray($data);
 
-            $usersTable = $this->getUsersTable();
-            $usersTable->insertUser($user, $password);
-            $this->redirect()->toRoute("/home");
+            $userTable = $this->getUsersTable();
+            $userTable->insertUser($user, $password);
+            
+            // init session
+            
+            $this->redirect()->toRoute("home");
         }
 
         return new ViewModel();
@@ -36,11 +39,11 @@ class SignUpController extends AbstractActionController
      */
     public function getUsersTable()
      {
-         if (!$this->usersTable) {
+         if (!$this->userTable) {
              $sm = $this->getServiceLocator();
-             $this->usersTable = $sm->get('User\Model\UsersTable');
+             $this->userTable = $sm->get('User\Model\UsersTable');
          }
-         return $this->usersTable;
+         return $this->userTable;
      }
     
 }

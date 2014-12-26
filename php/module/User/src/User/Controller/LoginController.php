@@ -6,6 +6,8 @@ use Zend\View\Model\ViewModel;
 
 class LoginController extends AbstractActionController
 {
+    protected $usersTable;
+    
     public function indexAction()
     {
         \Facebook\FacebookSession::setDefaultApplication('1411744809117379', 'd4fa6295ed95a37967eccd8e47bd4618');
@@ -43,12 +45,39 @@ class LoginController extends AbstractActionController
             $request = new \Facebook\FacebookRequest($session, 'GET', '/me');
             $response = $request->execute();
             $graphObject = $response->getGraphObject();
-            var_dump($graphObject);
+            var_dump($graphObject);die;
+            $data = array(
+                'email' => $graphObject->email,
+                'facebookId' => $graphObject->id,
+                'role' => 'S',
+                'password' => '*'
+            );
+
+            $user = new \User\Model\Users();
+            $user->exchangeArray($data);
+            $usersTable = $this->getUsersTable();
+            $usersTable->insertUser($user, $password);
+            var_dump($data);die;
+
+            
         }
 
         die;
         $viewModel = new ViewModel();
         return $viewModel;
+    }
+
+    /**
+     * 
+     * @return \User\Model\UsersTable
+     */
+    public function getUsersTable()
+    {
+        if (!$this->usersTable) {
+            $sm = $this->getServiceLocator();
+            $this->usersTable = $sm->get('User\Model\UsersTable');
+        }
+        return $this->usersTable;
     }
 
 }

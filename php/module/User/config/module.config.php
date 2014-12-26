@@ -151,16 +151,16 @@ return array(
         ),
     ),
     'factories' => array(
-        'Users\Model\UsersTable' =>  function($sm) {
+        'User\Model\UsersTable' =>  function($sm) {
             $tableGateway = $sm->get('UsersTableGateway');
             $table = new AlbumTable($tableGateway);
             return $table;
         },
-        'UsersTableGateway' => function ($sm) {
+        'UserTableGateway' => function ($sm) {
             $dbAdapter = $sm->get('Zend\Db\Adapter\Adapter');
             $resultSetPrototype = new ResultSet();
-            $resultSetPrototype->setArrayObjectPrototype(new Users());
-            return new TableGateway('users', $dbAdapter, null, $resultSetPrototype);
+            $resultSetPrototype->setArrayObjectPrototype(new User());
+            return new TableGateway('user', $dbAdapter, null, $resultSetPrototype);
         },
     ),
 );

@@ -4,8 +4,6 @@ namespace User;
 use Zend\Mvc\ModuleRouteListener;
 use Zend\Mvc\MvcEvent;
 use Zend\ModuleManager\ModuleManager;
-use User\Model\Users;
-use User\Model\UsersTable;
 
 class Module
 {
@@ -105,13 +103,13 @@ class Module
                 },
                 'User\Model\UsersTable' =>  function($sm) {
                      $tableGateway = $sm->get('UsersTableGateway');
-                     $table = new UsersTable($tableGateway);
+                     $table = new Model\UsersTable($tableGateway);
                      return $table;
                  },
                  'UsersTableGateway' => function ($sm) {
                      $dbAdapter = $sm->get('Zend\Db\Adapter\Adapter');
                      $resultSetPrototype = new \Zend\Db\ResultSet\ResultSet();
-                     $resultSetPrototype->setArrayObjectPrototype(new Users());
+                     $resultSetPrototype->setArrayObjectPrototype(new Model\Users());
                      return new \Zend\Db\TableGateway\TableGateway('users', $dbAdapter, null, $resultSetPrototype);
                  },
             ),

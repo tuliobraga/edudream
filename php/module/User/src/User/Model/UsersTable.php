@@ -29,12 +29,12 @@ namespace User\Model;
         return $row;
     }
 
-     public function saveUser(User $user)
+     public function saveUser(Users $user)
      {
         $data = array(
             'email' => $user->email,
             'role'  => $user->role,
-            'lastAccess'  => $user->lastAccess,
+            'lastaccess'  => $user->lastaccess,
         );
 
         $id = (int) $user->id;
@@ -44,21 +44,22 @@ namespace User\Model;
             if ($this->getAlbum($id)) {
                 $this->tableGateway->update($data, array('id' => $id));
             } else {
-                throw new \Exception('Album id does not exist');
+                throw new \Exception('User id does not exist');
             }
         }
      }
 
-    public function insertUser(User $user, $password)
+    public function insertUser(Users $user, $password)
     {
         $data = array(
             'email' => $user->email,
             'role'  => $user->role,
-            'lastAccess'  => $user->lastAccess,
+            'lastaccess'  => date('m/d/Y'),
             'password' => $password
         );
 
         $this->tableGateway->insert($data);
+        $user->id = $this->tableGateway->lastInsertValue;
     }
 
     public function deleteUser($id)
