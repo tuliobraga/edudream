@@ -12,11 +12,25 @@ class SignUpController extends AbstractActionController
     {
         if($this->getRequest()->isPost()) {
             /** @todo filter form inputs */
+            $name = $this->getRequest()->getPost('name');
+            $email = $this->getRequest()->getPost('email');
             $password = $this->getRequest()->getPost('password');
+            $role = $this->getRequest()->getPost('role');
+            
+            if(!$name)
+                throw new Exception('Campo Nome é obrigatório!');
+            if(!$email)
+                throw new Exception('Campo Email é obrigatório!');
+            if(!$password)
+                throw new Exception('Campo Password é obrigatório!');
+            if(!$role)
+                throw new Exception('Campo Role é obrigatório!');
+            
             $data = array(
-                'email' => $this->getRequest()->getPost('email'),
-                'password' => $this->getRequest()->getPost('password'),
-                'role' => $this->getRequest()->getPost('role')
+                'name' => $name,
+                'email' => $email,
+                'password' => $password,
+                'role' => $role
             );
 
             $user = new \User\Model\Users();
@@ -27,7 +41,14 @@ class SignUpController extends AbstractActionController
             
             // init session
             
-            $this->redirect()->toRoute("home");
+            $container = new \Zend\Session\Container('login');
+            $container->user = $user;
+
+            if($user->isDreamer()) {
+                $this->redirect()->toRoute('dream');
+            } else if ($user->isAngel()) {
+                $this->redirect()->toRoute('angel');
+            }
         }
 
         return new ViewModel();

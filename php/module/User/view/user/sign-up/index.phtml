@@ -5,19 +5,19 @@ $this->headLink()->appendStylesheet($this->basePath() . '/css/form-signup.css');
 <div class="main">
 
 <div class="container sign">
-    <form method="post" action="?">
+    <form method="get" action="<?php echo $this->basePath(); ?>/login">
    
     <div class="col-md-6 col-md-offset-3">
         <h2>Selecione o seu tipo de usuário.</h2>
         <div class="btn-group" data-toggle="buttons" style="width:320px; margin: 0 auto;display: block;clear: both;float: none; overflow: hidden;">
             <label class="btn btn-signup active">
-                <input type="radio" value='S' name="role" id="optSonhador" autocomplete="off" checked> Sonhador
+                <input type="radio" value='S' name="role" id="optSonhador" autocomplete="off" checked onclick="document.getElementById('hiddenRole').value = 'S';"> Sonhador
             </label>
             <label class="btn btn-signup">
-                <input type="radio" value='M' name="role" id="optMentor" autocomplete="off"> Mentor
+                <input type="radio" value='M' name="role" id="optMentor" autocomplete="off" onclick="document.getElementById('hiddenRole').value = 'M';"> Mentor
             </label>
             <label class="btn btn-signup">
-                <input type="radio" value='O' name="role" id="optOrganizacao" autocomplete="off"> Organização
+                <input type="radio" value='O' name="role" id="optOrganizacao" autocomplete="off" onclick="document.getElementById('hiddenRole').value = 'O';> Organização
             </label>
         </div>
     </div>
@@ -25,11 +25,12 @@ $this->headLink()->appendStylesheet($this->basePath() . '/css/form-signup.css');
     <div class="col-md-6 col-md-offset-3">
         <h2>Para começar o cadastro, você precisa conectar com o Facebook.
         </h2>
-        <a href="#" class="btn btn-lg btn-facebook btn-primary btn-signup">
+        <button type="submit" href="#" class="btn btn-lg btn-facebook btn-primary btn-signup">
 
         <b>facebook</b>
-            Conectar </a>
+            Conectar </button>
     </div>
+    </form>
     <div class="col-md-6 col-md-offset-3">
         <p class='or'>
             <span>ou</span>
@@ -37,6 +38,8 @@ $this->headLink()->appendStylesheet($this->basePath() . '/css/form-signup.css');
 
         <h2>Criar uma conta.
         </h2>
+            <form method="post" action="?">
+            <input id="hiddenRole" type="hidden" name="role" value="S" />
             <div class="form-group">
                 <label for="exampleInputName1">Seu nome *</label>
                 <input name="text" type="name" class="form-control" id="exampleInputName1" placeholder="Digite seu nome">
@@ -51,8 +54,8 @@ $this->headLink()->appendStylesheet($this->basePath() . '/css/form-signup.css');
             </div>
 
             <button type="submit" class="btn btn-lg btn-big btn-primary btn-signup">Cadastrar </button>
+            </form>
         <p>Por favor, preencha todos os campos obrigatórios (*).</p>
     </div>
-    </form>
 </div>
 </div>
