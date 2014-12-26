@@ -49,6 +49,7 @@ class SignUpController extends AbstractActionController
             } else if ($user->isAngel()) {
                 $this->redirect()->toRoute('angel');
             }
+            $this->redirect()->toRoute('dream');
         }
 
         return new ViewModel();

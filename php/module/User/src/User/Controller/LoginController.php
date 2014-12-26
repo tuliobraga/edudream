@@ -22,6 +22,9 @@ class LoginController extends AbstractActionController
             $this->redirect()->toUrl($loginUrl);;
         } else {
             $viewModel = new ViewModel();
+            if(isset($_GET['message'])) {
+                $viewModel->setVariable('message', $_GET['message']);
+            }
             return $viewModel;
         }
     }
@@ -73,8 +76,34 @@ class LoginController extends AbstractActionController
             } else if ($user->isAngel()) {
                 $this->redirect()->toRoute('angel');
             }
+            $this->redirect()->toRoute('dream');
         } else {
             throw new \Exception("Could not request a facebook session.");
+        }
+    }
+
+    public function login() {
+        if($this->getRequest()->isPost()) {
+            /** @todo filter form inputs */
+            $email = $this->getRequest()->getPost('email');
+            $password = md5($this->getRequest()->getPost('password'));
+            
+            try {
+                if(!$email)
+                    throw new \Exception('Campo Nome é obrigatório!');
+                if(!$password)
+                    throw new \Exception('Campo Email é obrigatório!');
+            } catch (\Exception $e) {
+                $this->redirect()->toRoute('login', array('message' => $e->getMessage()));
+            }
+            
+            $usersTable = $this->getUsersTable();
+            $result = $usersTable->userIsValid($email, $password);
+            if($result === true) {
+                
+            } else {
+                $this->redirect()->toRoute('login', array('message' => 'Email ou senha inválidos.'));
+            }
         }
     }
 
