@@ -1,5 +1,5 @@
 <div class="container sign">
-    <div class="col-md-6 col-md-offset-3">
+    <!-- <div class="col-md-6 col-md-offset-3">
         <h2>Selecione o seu tipo de usuário.</h2>
         <div class="btn-group" data-toggle="buttons" style="width:320px; margin:0 auto ;">
             <label class="btn btn-signup active">
@@ -12,31 +12,75 @@
                 <input type="radio" value='O' name="options" id="optOrganizacao" autocomplete="off"> Organização
             </label>
         </div>
-    </div>
-    <div class="col-md-6 col-md-offset-3">
-        <h2>Você pode acessar através do Facebook.</h2>
+    </div> -->
+
+
+
+
+
+
+
+
+    
+
+
+    <div class="col-md-3 col-md-offset-2">
+
+        <br />
+        <br />
+        <br />
+        <br />
+        
+        <h2>Acesse com sua conta do facebook.
+        </h2>
         <a href="<?php echo $this->basePath() ?>/login/facebook" class="btn btn-lg btn-facebook btn-primary btn-signup">
             <b>facebook</b>
-                Conectar </a>
+            Conectar </a>
+        </div>
+
+
+
+
+
+        <div class="col-md-2 ">
+
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <p class='or'>
+                <span>ou</span>
+            </p>
+
+        </div>
+
+
+        <div class="col-md-6 col-md-offset-3">
+           
+            <h2>Fazer login </h2>
+            <form>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Seu e-mail</label>
+                    <input type="text" class="form-control" id="exampleInputEmail1"  >
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Digite sua senha</label>
+                    <input type="password" class="form-control" id="exampleInputPassword1"  >
+                </div>
+                <button type="submit" class="btn btn-lg btn-big btn-primary btn-signup">Entrar </button>
+                <h4 class='pull-right'><a href="">Esqueceu a senha?</a></h4>
+                <hr style="clear: both;"/>
+                <h4 class='pull-right'>Não possui uma conta? <a href="<?php echo $this->basePath() ?>/sign-up">Cadastre-se.</a></h4>
+            </form>
+        </div>
+
+
+
+        
+        
+        
+
+
     </div>
-    <div class="col-md-6 col-md-offset-3">
-        <p class='or'>
-            <span>ou</span>
-        </p>
-        <h2>Fazer login </h2>
-        <form>
-            <div class="form-group">
-                <label for="exampleInputEmail1">Seu e-mail</label>
-                <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
-            </div>
-            <div class="form-group">
-                <label for="exampleInputPassword1">Digite sua senha</label>
-                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-            </div>
-            <button type="submit" class="btn btn-lg btn-big btn-primary btn-signup">Entrar </button>
-            <h4 class='pull-right'><a href="">Esqueceu a senha?</a></h4>
-            <hr style="clear: both;"/>
-            <h4 class='pull-right'>Não possui uma conta? <a href="<?php echo $this->basePath() ?>/sign-up">Cadastre-se.</a></h4>
-        </form>
-    </div>
-</div>
