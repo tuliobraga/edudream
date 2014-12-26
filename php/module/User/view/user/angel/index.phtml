@@ -16,12 +16,8 @@
 <?php 
 $container = new \Zend\Session\Container('login');
 $user = $container->user;
+var_dump($user);
 if($user) {
-    echo 'Bem vindo usuário. Considere cadastrar-se neste site.';
-}else {
-    echo 'Bem vindo '.$user->name;
-}
-
 ?>
 </h2>
             <div class="col-md-4 text-center">
@@ -75,7 +71,8 @@ if($user) {
             </div>
 
         </div>
-        
+        }
+?>        
 
         <hr />
 
