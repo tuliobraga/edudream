@@ -31,8 +31,8 @@ namespace User\Model;
 
     public function getUserByLogin($email, $password)
     {
-        $result = $this->tableselect(function (Select $select) use ($email, $password) {
-            $select->tableGateway
+        $result = $this->tableGateway->select(function (Select $select) use ($email, $password) {
+            $select
                 ->columns(array(
                     'name',
                     'email',
