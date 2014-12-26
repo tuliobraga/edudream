@@ -35,7 +35,7 @@ namespace User\Model;
         $select->where(array('email' => $email))
                 ->where(array('password' => $password));
 
-        $rowset = $this->selectWith($select);
+        $rowset = $this->tableGateway->selectWith($select);
         $row = $rowset->current();
         return $row;
     }
