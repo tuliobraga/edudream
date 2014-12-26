@@ -31,6 +31,18 @@ namespace User\Model;
 
     public function getUserByLogin($email, $password)
     {
+        $result = $this->tableselect(function (Select $select) use ($email, $password) {
+            $select->tableGateway
+                ->columns(array(
+                    'name',
+                    'email',
+                    'facebookid',
+                    
+                    
+                ))->where->equalTo('email', $email)->where->equalTo('password', $password);
+        });
+var_dump($result->toArray());die;
+        return $result->toArray();
         $select = $this->tableGateway->select();
         $select->where->equalTo($email);
         $rowset = $select->where->equalTo($password);
