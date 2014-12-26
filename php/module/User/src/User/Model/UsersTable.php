@@ -29,7 +29,7 @@ namespace User\Model;
         return $row;
     }
 
-     public function saveUser(Users $user)
+     public function saveUser(User\Model\Users $user)
      {
         $data = array(
             'email' => $user->email,
@@ -49,7 +49,7 @@ namespace User\Model;
         }
      }
 
-    public function insertUser($user, $password)
+    public function insertUser(User\Model\Users $user, $password)
     {
         $data = array(
             'email' => $user->email,
