@@ -19,10 +19,10 @@ class SignUpController extends AbstractActionController
                 'role' => $this->getRequest()->getPost('role')
             );
 
-            $user = new \User\Model\User();
+            $user = new \User\Model\Users();
             $user->exchangeArray($data);
 
-            $userTable = $this->getUserTable();
+            $userTable = $this->getUserfTable();
             $userTable->insertUser($user, $password);
             $this->redirect()->toRoute("/home");
         }
@@ -32,13 +32,13 @@ class SignUpController extends AbstractActionController
 
     /**
      * 
-     * @return \User\Model\UserTable
+     * @return \User\Model\UsersTable
      */
-    public function getUserTable()
+    public function getUsersTable()
      {
          if (!$this->userTable) {
              $sm = $this->getServiceLocator();
-             $this->userTable = $sm->get('User\Model\UserTable');
+             $this->userTable = $sm->get('User\Model\UsersTable');
          }
          return $this->userTable;
      }

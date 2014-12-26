@@ -103,16 +103,16 @@ class Module
                     \Zend\Session\Container::setDefaultManager($sessionManager);
                     return $sessionManager;
                 },
-                'User\Model\UserTable' =>  function($sm) {
-                     $tableGateway = $sm->get('UserTableGateway');
+                'User\Model\UsersTable' =>  function($sm) {
+                     $tableGateway = $sm->get('UsersTableGateway');
                      $table = new UserTable($tableGateway);
                      return $table;
                  },
-                 'UserTableGateway' => function ($sm) {
+                 'UsersTableGateway' => function ($sm) {
                      $dbAdapter = $sm->get('Zend\Db\Adapter\Adapter');
                      $resultSetPrototype = new \Zend\Db\ResultSet\ResultSet();
-                     $resultSetPrototype->setArrayObjectPrototype(new User());
-                     return new \Zend\Db\TableGateway\TableGateway('user', $dbAdapter, null, $resultSetPrototype);
+                     $resultSetPrototype->setArrayObjectPrototype(new Users());
+                     return new \Zend\Db\TableGateway\TableGateway('users', $dbAdapter, null, $resultSetPrototype);
                  },
             ),
         );

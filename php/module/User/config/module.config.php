@@ -151,8 +151,8 @@ return array(
         ),
     ),
     'factories' => array(
-        'User\Model\UserTable' =>  function($sm) {
-            $tableGateway = $sm->get('UserTableGateway');
+        'User\Model\UsersTable' =>  function($sm) {
+            $tableGateway = $sm->get('UsersTableGateway');
             $table = new AlbumTable($tableGateway);
             return $table;
         },

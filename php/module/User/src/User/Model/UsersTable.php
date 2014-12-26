@@ -3,7 +3,7 @@ namespace User\Model;
 
  use Zend\Db\TableGateway\TableGateway;
 
- class UserTable
+ class UsersTable
  {
     protected $tableGateway;
 
@@ -29,7 +29,7 @@ namespace User\Model;
         return $row;
     }
 
-     public function saveUser(User $user)
+     public function saveUser(Users $user)
      {
         $data = array(
             'email' => $user->email,
@@ -49,7 +49,7 @@ namespace User\Model;
         }
      }
 
-    public function insertUser(User $user, $password)
+    public function insertUser(Users $user, $password)
     {
         $data = array(
             'email' => $user->email,
