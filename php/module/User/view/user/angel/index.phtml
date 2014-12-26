@@ -17,6 +17,7 @@
 $container = new \Zend\Session\Container('login');
 $user = $container->user;
 if($user) {
+    echo 'Bem vindo '.$user->name . '!';
 ?>
 </h2>
             <div class="col-md-4 text-center">
