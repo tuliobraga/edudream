@@ -1,7 +1,7 @@
 <?php 
 namespace User\Model;
 
- class User
+ class Users
  {
 
     const ROLE_SONHADOR = 'S';
@@ -18,6 +18,6 @@ namespace User\Model;
         $this->id = (!empty($data['id'])) ? $data['id'] : null;
         $this->email = (!empty($data['email'])) ? $data['email'] : null;
         $this->role  = (!empty($data['role'])) ? $data['role'] : null;
-        $this->lastAccess = (!empty($data['role'])) ? $data['role'] : null;;
+        $this->lastAccess = (!empty($data['lastAccess'])) ? $data['lastAccess'] : null;;
     }
  }
