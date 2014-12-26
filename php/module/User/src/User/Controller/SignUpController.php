@@ -22,7 +22,7 @@ class SignUpController extends AbstractActionController
             $user = new \User\Model\Users();
             $user->exchangeArray($data);
 
-            $userTable = $this->getUserfTable();
+            $userTable = $this->getUsersTable();
             $userTable->insertUser($user, $password);
             $this->redirect()->toRoute("/home");
         }
