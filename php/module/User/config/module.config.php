@@ -6,7 +6,57 @@ return array(
             // new controllers and actions without needing to create a new
             // module. Simply drop new controllers in, and you can access them
             // using the path /application/:controller/:action
-            'login' => array(
+            'dream' => array(
+                'type'    => 'Literal',
+                'options' => array(
+                    'route'    => '/dream',
+                    'defaults' => array(
+                        '__NAMESPACE__' => 'User\Controller',
+                        'controller'    => 'Dream',
+                        'action'        => 'index',
+                    ),
+                ),
+                'may_terminate' => true,
+                'child_routes' => array(
+                    'default' => array(
+                        'type'    => 'Segment',
+                        'options' => array(
+                            'route'    => '/[:controller[/:action]]',
+                            'constraints' => array(
+                                'controller' => '[a-zA-Z][a-zA-Z0-9_-]*',
+                                'action'     => '[a-zA-Z][a-zA-Z0-9_-]*',
+                            ),
+                            'defaults' => array(
+                            ),
+                        ),
+                    ),
+                ),
+            ), 'angel' => array(
+                'type'    => 'Literal',
+                'options' => array(
+                    'route'    => '/angel',
+                    'defaults' => array(
+                        '__NAMESPACE__' => 'User\Controller',
+                        'controller'    => 'Angel',
+                        'action'        => 'index',
+                    ),
+                ),
+                'may_terminate' => true,
+                'child_routes' => array(
+                    'default' => array(
+                        'type'    => 'Segment',
+                        'options' => array(
+                            'route'    => '/[:controller[/:action]]',
+                            'constraints' => array(
+                                'controller' => '[a-zA-Z][a-zA-Z0-9_-]*',
+                                'action'     => '[a-zA-Z][a-zA-Z0-9_-]*',
+                            ),
+                            'defaults' => array(
+                            ),
+                        ),
+                    ),
+                ),
+            ),'login' => array(
                 'type'    => 'Literal',
                 'options' => array(
                     'route'    => '/login',
@@ -109,6 +159,8 @@ return array(
         'invokables' => array(
             'User\Controller\Login' => 'User\Controller\LoginController',
             'User\Controller\SignUp' => 'User\Controller\SignUpController',
+            'User\Controller\Dream' => 'User\Controller\DreamController',
+            'User\Controller\Angel' => 'User\Controller\AngelController',
         ),
     ),
     'view_manager' => array(
@@ -118,9 +170,11 @@ return array(
         'not_found_template'       => 'error/404',
         'exception_template'       => 'error/index',
         'template_map' => array(
-            'user/layout/layout'           => __DIR__ . '/../view/layout/layout.phtml',
-            'user/login/index' => __DIR__ . '/../view/user/login/index.phtml',
-            'user/sign-up/index' => __DIR__ . '/../view/user/sign-up/index.phtml',
+            'user/layout/layout'      => __DIR__ . '/../view/layout/layout.phtml',
+            'user/dream/index'        => __DIR__ . '/../view/user/dream/index.phtml',
+            'user/angel/index'        => __DIR__ . '/../view/user/angel/index.phtml',
+            'user/login/index'        => __DIR__ . '/../view/user/login/index.phtml',
+            'user/sign-up/index'      => __DIR__ . '/../view/user/sign-up/index.phtml',
             'error/404'               => __DIR__ . '/../view/error/404.phtml',
             'error/index'             => __DIR__ . '/../view/error/index.phtml',
         ),
