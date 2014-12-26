@@ -60,17 +60,12 @@ class LoginController extends AbstractActionController
                 $r = $usersTable->insertUser($user);
             }
         }
-var_dump($user);
-        die;
-        $viewModel = new ViewModel();
-        return $viewModel;
-        
-        \Facebook\FacebookSession::setDefaultApplication('1411744809117379', 'd4fa6295ed95a37967eccd8e47bd4618');
-        $helper = new \Facebook\FacebookRedirectLoginHelper('http://localhost:4567/edudream/php/public/login/process');
-        $url = $helper->getLoginUrl();
-        $this->redirect()->toUrl($url);
-        $viewModel = new ViewModel();
-        return $viewModel;
+
+        if($user->isDreamer()) {
+            $this->redirect()->toRoute('dream');
+        } else if ($user->isAngel()) {
+            $this->redirect()->toRoute('angel');
+        }
     }
 
     public function processAction() {
