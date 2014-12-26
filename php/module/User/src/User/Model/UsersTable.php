@@ -34,6 +34,7 @@ namespace User\Model;
         $id  = (int) $id;
         $rowset = $this->tableGateway->select(array('email' => $email));
         $row = $rowset->current();
+        var_dump($row);die;
         if($row->password !== $password) {
             $row = false;
         }
